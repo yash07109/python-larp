@@ -8,6 +8,7 @@ campus_pilot.db
 *.db-shm
 *.db-wal
 sample_emails/
+logs/
 
 # Python
 __pycache__/
