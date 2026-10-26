@@ -113,7 +113,7 @@ ML libraries (PyTorch, TensorFlow) have heavy dependencies — virtual environme
     title: "Packages & `__init__.py`",
     description: "Organize modules into packages with `__init__.py`.",
     order: 3,
-    difficulty": "intermediate",
+    difficulty: "intermediate",
     estimatedTime: "20 min",
     content: `
 ### Package Structure

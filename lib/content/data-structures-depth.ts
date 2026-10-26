@@ -24,7 +24,7 @@ export const DATA_STRUCTURES_DEPTH_LESSONS: Lesson[] = [
     title: "Linked List",
     description: "Singly and doubly linked nodes from scratch.",
     order: 1,
-    difficulty": "intermediate",
+    difficulty: "intermediate",
     estimatedTime: "25 min",
     content: `
 ### Concept
@@ -83,7 +83,7 @@ print(ll)`,
     title: "Stack & Queue",
     description: "LIFO and FIFO using lists and `collections.deque`.",
     order: 2,
-    difficulty": "intermediate",
+    difficulty: "intermediate",
     estimatedTime: "20 min",
     content: `
 ### Stack (LIFO)
@@ -123,8 +123,8 @@ print(q.popleft())  # 1`,
     slug: "collections-module",
     title: "collections Module",
     description: "deque, Counter, defaultdict, OrderedDict, namedtuple.",
-    order": 3,
-    difficulty": "intermediate",
+    order: 3,
+    difficulty: "intermediate",
     estimatedTime: "25 min",
     content: `
 ### Key Tools
@@ -161,8 +161,8 @@ print(dict(grouped))`,
     slug: "tree-graph",
     title: "Tree & Graph",
     description: "Binary trees and graphs with adjacency lists, DFS, BFS.",
-    order": 4,
-    difficulty": "advanced",
+    order: 4,
+    difficulty: "advanced",
     estimatedTime: "30 min",
     content: `
 ### Tree

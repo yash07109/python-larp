@@ -23,8 +23,8 @@ export const AI_ML_DS_LESSONS: Lesson[] = [
     slug: "numpy-basics",
     title: "NumPy Basics",
     description: "Arrays, vectorization, and broadcasting for numerical computing.",
-    order": 1,
-    difficulty": "beginner",
+    order: 1,
+    difficulty: "beginner",
     estimatedTime: "25 min",
     content: `
 ### Why NumPy
@@ -66,8 +66,8 @@ print(arr.reshape(5, 1))`,
     slug: "pandas-basics",
     title: "pandas Basics",
     description: "DataFrames, Series, indexing, grouping, and merging.",
-    order": 2,
-    difficulty": "beginner",
+    order: 2,
+    difficulty: "beginner",
     estimatedTime: "30 min",
     content: `
 ### Core Objects
@@ -113,8 +113,8 @@ Name: score, dtype: float64`,
     slug: "visualization",
     title: "Data Visualization",
     description: "Matplotlib and Seaborn for plotting data and model results.",
-    order": 3,
-    difficulty": "beginner",
+    order: 3,
+    difficulty: "beginner",
     estimatedTime: "25 min",
     content: `
 ### Matplotlib
@@ -154,8 +154,8 @@ plt.show()`,
     slug: "scikit-learn-basics",
     title: "scikit-learn Basics",
     description: "Train/test split, preprocessing, regression, classification.",
-    order": 4,
-    difficulty": "intermediate",
+    order: 4,
+    difficulty: "intermediate",
     estimatedTime: "30 min",
     content: `
 ### ML Workflow

@@ -71,7 +71,7 @@ Cleanup done`,
     title: "Custom Exceptions",
     description: "Define your own exception classes for domain-specific errors.",
     order: 2,
-    difficulty": "intermediate",
+    difficulty: "intermediate",
     estimatedTime: "15 min",
     content: `
 ### Creating Custom Exceptions
@@ -112,8 +112,8 @@ except NegativeValueError as e:
     slug: "logging-assertions",
     title: "Logging & Assertions",
     description: "Production-grade logging and debug assertions.",
-    order": 3,
-    difficulty": "intermediate",
+    order: 3,
+    difficulty: "intermediate",
     estimatedTime: "20 min",
     content: `
 ### Logging

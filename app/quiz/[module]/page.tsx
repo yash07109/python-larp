@@ -48,9 +48,9 @@ export default function QuizPage({ params }: QuizPageProps) {
     return score
   }
 
-  const score = calculateScore()
-  const percentage = Math.round((score / quiz.questions.length) * 100)
-  const passed = percentage >= 70
+  const score = calculateScore();
+  const percentage = Math.round((score / quiz.questions.length) * 100);
+  const passed = percentage >= 70;
 
   const currentQuestion = quiz.questions[currentQ];
 
