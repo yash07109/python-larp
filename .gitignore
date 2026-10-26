@@ -1,19 +1,17 @@
-# Secrets — never commit these
-credentials.json
-token.json
-
-# Local state
-config.json
-campus_pilot.db
+*.db
 *.db-shm
 *.db-wal
-sample_emails/
-logs/
-
-# Python
-__pycache__/
-*.py[cod]
 .venv/
+__pycache__/
+*.pyc
 .env
-.pytest_cache/
+.env.local
+.next/
+node_modules/
+logs/
 .DS_Store
+campus_pilot.db*
+spliteasy/
+credentials.json
+token.json
+campus_pilot/
