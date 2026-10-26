@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Trophy, FileText } from "lucide.react"
+import { Trophy, FileText } from "lucide-react"
 
 export default function Certificate() {
   return (
@@ -31,7 +31,7 @@ export default function Certificate() {
                 <p className="text-indigo-700 dark:text-indigo-300 font-medium">Certificate of Completion</p>
               </div>
               <div className="text-right">
-                <div className="text-xs font-mono text-indigo-600 dark:text-indigo-400">PM-{Math.floor(Math.random() * 100000).toString().padStart(5, "0")}</div>
+                <div className="text-xs font-mono text-indigo-600 dark:text-indigo-400">PM-12345</div>
               </div>
             </div>
 

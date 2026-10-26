@@ -1,6 +1,6 @@
 import { getAllFundamentals } from "@/lib/content/fundamentals"
 import Link from "next/link"
-import { Play } from "lucide.react"
+import { Play } from "lucide-react"
 
 export default function FundamentalsIndex() {
   const lessons = getAllFundamentals()

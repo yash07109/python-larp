@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Code2 } from "lucide.react"
+import { Code2 } from "lucide-react"
 import { getAllFunctionsDepth, getLesson as getFunctionsDepthLesson } from "@/lib/content/functions-depth"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"

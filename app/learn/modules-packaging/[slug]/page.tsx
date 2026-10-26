@@ -2,12 +2,11 @@ import { notFound } from "next/navigation"
 import { getAllModulesPackaging, getLesson as getModulesPackagingLesson } from "@/lib/content/modules-packaging"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
-import { Code2 } from "lucide.react"
 
 const sections = [
-  { slug: "import-system", title: "Import System", icon: Code2 },
-  { slug: "pip-venv", title: "pip & Virtual Environments", icon: Code2 },
-  { slug: "packages", title: "Packages & __init__.py", icon: Code2 },
+  { slug: "import-system", title: "Import System", iconKey: "Code2", color: "bg-fuchsia-500/20 text-fuchsia-400" },
+  { slug: "pip-venv", title: "pip & Virtual Environments", iconKey: "Code2", color: "bg-fuchsia-500/20 text-fuchsia-400" },
+  { slug: "packages", title: "Packages & __init__.py", iconKey: "Code2", color: "bg-fuchsia-500/20 text-fuchsia-400" },
 ]
 
 export default function ModulesPackagingLesson({ params }: { params: { slug: string } }) {
@@ -18,7 +17,7 @@ export default function ModulesPackagingLesson({ params }: { params: { slug: str
   }
 
   return (
-    <ModuleLayout sections={sections as any} moduleName="Modules & Packaging" modulePath="/learn/modules-packaging">
+    <ModuleLayout sections={sections} moduleName="Modules & Packaging" modulePath="/learn/modules-packaging">
       <LessonPlayer lesson={lesson} modulePath="/learn/modules-packaging" allLessons={getAllModulesPackaging()} />
     </ModuleLayout>
   )

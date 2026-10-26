@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Target } from "lucide.react"
+import { Target } from "lucide-react"
 import { getAllAdvancedOOP, getLesson as getAdvancedOOPLesson } from "@/lib/content/advanced-oop"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"

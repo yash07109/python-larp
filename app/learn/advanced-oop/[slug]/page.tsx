@@ -2,12 +2,11 @@ import { notFound } from "next/navigation"
 import { getAllAdvancedOOP, getLesson as getAdvancedOOPLesson } from "@/lib/content/advanced-oop"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
-import { Target } from "lucide.react"
 
 const sections = [
-  { slug: "metaclasses", title: "Metaclasses", icon: Target },
-  { slug: "descriptors", title: "Descriptors", icon: Target },
-  { slug: "mro-multiple-inheritance", title: "MRO & Multiple Inheritance", icon: Target },
+  { slug: "metaclasses", title: "Metaclasses", iconKey: "Target", color: "bg-rose-500/20 text-rose-400" },
+  { slug: "descriptors", title: "Descriptors", iconKey: "Target", color: "bg-rose-500/20 text-rose-400" },
+  { slug: "mro-multiple-inheritance", title: "MRO & Multiple Inheritance", iconKey: "Target", color: "bg-rose-500/20 text-rose-400" },
 ]
 
 export default function AdvancedOOPLesson({ params }: { params: { slug: string } }) {
@@ -18,7 +17,7 @@ export default function AdvancedOOPLesson({ params }: { params: { slug: string }
   }
 
   return (
-    <ModuleLayout sections={sections as any} moduleName="Advanced OOP" modulePath="/learn/advanced-oop">
+    <ModuleLayout sections={sections} moduleName="Advanced OOP" modulePath="/learn/advanced-oop">
       <LessonPlayer lesson={lesson} modulePath="/learn/advanced-oop" allLessons={getAllAdvancedOOP()} />
     </ModuleLayout>
   )

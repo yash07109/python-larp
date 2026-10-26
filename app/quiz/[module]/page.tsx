@@ -1,17 +1,17 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight, Trophy, GraduationCap, CheckCircle2, XCircle } from "lucide.react"
+import { ArrowRight, Trophy, GraduationCap, CheckCircle2 } from "lucide-react"
 import { getQuiz } from "@/lib/content/quizzes"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 interface QuizPageProps {
-  module: string
+  params: { module: string }
 }
 
-export default function QuizPage({ module }: QuizPageProps) {
-  const quiz = getQuiz(module)
+export default function QuizPage({ params }: QuizPageProps) {
+  const quiz = getQuiz(params.module)
   const [currentQ, setCurrentQ] = useState(0)
   const [answers, setAnswers] = useState<{ [qId: string]: number }>({})
   const [submitted, setSubmitted] = useState(false)
@@ -130,7 +130,7 @@ export default function QuizPage({ module }: QuizPageProps) {
 
         {submitted && !showResult && (
           <div className="text-center py-12">
-            <div className={cn("mx-auto mb-6", passed ? "text-emerald-500" : "text-amber-500")} className="text-6xl">
+            <div className={cn("mx-auto mb-6", passed ? "text-emerald-500" : "text-amber-500", "text-6xl")}>
               {passed ? <Trophy className="w-12 h-12" /> : <GraduationCap className="w-12 h-12" />}
             </div>
             <h1 className="text-3xl font-bold mb-4">{passed ? "You Passed!" : "Keep Practicing"}</h1>

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { MousePointer } from "lucide.react"
+import { MousePointer } from "lucide-react"
 import { getAllComprehensions, getLesson as getComprehensionsLesson } from "@/lib/content/comprehensions"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"

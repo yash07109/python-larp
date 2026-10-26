@@ -1,7 +1,16 @@
 import { notFound } from "next/navigation"
-import { getLesson } from "@/lib/content/fundamentals"
-import { LessonSidebar } from "@/components/LessonSidebar"
+import { getAllFundamentals, getLesson } from "@/lib/content/fundamentals"
+import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
+
+const sections = [
+  { slug: "introduction-setup", title: "Introduction & Setup", iconKey: "Play", color: "bg-indigo-500/20 text-indigo-400" },
+  { slug: "variables-data-types", title: "Variables & Data Types", iconKey: "Code2", color: "bg-blue-500/20 text-blue-400" },
+  { slug: "operators", title: "Operators", iconKey: "Zap", color: "bg-emerald-500/20 text-emerald-400" },
+  { slug: "strings", title: "Strings", iconKey: "MousePointer", color: "bg-pink-500/20 text-pink-400" },
+  { slug: "input-output", title: "Input & Output", iconKey: "Zap", color: "bg-amber-500/20 text-amber-400" },
+  { slug: "comments-docstrings", title: "Comments & Docstrings", iconKey: "Code2", color: "bg-blue-500/20 text-blue-400" },
+]
 
 export default function FundamentalsLesson({ params }: { params: { slug: string } }) {
   const lesson = getLesson(params.slug)
@@ -11,15 +20,8 @@ export default function FundamentalsLesson({ params }: { params: { slug: string 
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-12 gap-8">
-          <LessonSidebar currentSlug={lesson.slug} className="lg:col-span-3" />
-          <main className="lg:col-span-9">
-            <LessonPlayer lesson={lesson} />
-          </main>
-        </div>
-      </div>
-    </div>
+    <ModuleLayout sections={sections} moduleName="Fundamentals" modulePath="/learn/fundamentals">
+      <LessonPlayer lesson={lesson} modulePath="/learn/fundamentals" allLessons={getAllFundamentals()} />
+    </ModuleLayout>
   )
 }

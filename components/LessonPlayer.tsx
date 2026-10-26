@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { ArrowLeft, CheckCircle2, Clock, Target, Quiz, FileText } from "lucide.react"
+import { ArrowLeft, CheckCircle2, Clock, Target, FileText } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useProgress } from "./useProgress"
 
@@ -178,7 +178,7 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
                 </div>
               </Link>
             ) : (
-              <p className="text-sm text-muted-foreground">You've completed all lessons in this module!</p>
+              <p className="text-sm text-muted-foreground">You have completed all lessons in this module!</p>
             )}
           </div>
 

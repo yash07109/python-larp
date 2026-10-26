@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Zap } from "lucide.react"
+import { Zap } from "lucide-react"
 import { getAllAIMLDS, getLesson as getAIMLDSLesson } from "@/lib/content/ai-ml-ds"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"

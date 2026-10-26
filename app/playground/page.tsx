@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
-import { Play, Stop, Copy, RefreshCw, Terminal, Zap, Download, Maximize, Minimize } from "lucide.react"
+import { Play, Square, Copy, RefreshCw, Terminal, Zap, Download, Maximize, Minimize } from "lucide-react"
 
 export default function Playground() {
   const [code, setCode] = useState(`# Welcome to the Python Playground\n# Write your code here and click Run\n\nname = "Python Mastery"\nprint(f"Hello, {name}!")\n\n# Try some math\nprint(2 + 2)\nprint(10 ** 2)\n\n# List example\nnums = [1, 2, 3, 4, 5]\nprint(sum(nums))`)
@@ -21,6 +21,7 @@ export default function Playground() {
     setPyodideLoading(true)
     try {
       const { loadPyodide } = await import(
+        /* webpackIgnore: true */
         "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs"
       )
       const pyodide = await loadPyodide()
@@ -151,7 +152,7 @@ export default function Playground() {
                     : "bg-gradient-to-r from-indigo-600 to-violet-600 text-white hover:shadow-lg hover:shadow-indigo-500/40"
                 )}
               >
-                {isRunning ? <Stop className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                {isRunning ? <Square className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                 {isRunning ? "Running..." : "Run Code"}
               </button>
               <button onClick={clearOutput} className="p-2.5 rounded-xl hover:bg-accent text-foreground" title="Clear output">

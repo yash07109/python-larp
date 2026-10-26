@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Zap } from "lucide.react"
+import { Zap } from "lucide-react"
 import { getAllControlFlow, getLesson as getControlFlowLesson } from "@/lib/content/control-flow"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"

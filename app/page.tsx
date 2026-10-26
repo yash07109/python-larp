@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Play, Zap, Code2, MousePointer, Target, GraduationCap, Sun, Moon, Search, ArrowRight, Sparkles, Code } from "lucide.react"
+import { Play, Zap, Code2, MousePointer, Target, GraduationCap, Sun, Moon, Search, ArrowRight, Sparkles, Code } from "lucide-react"
 
 const modules = [
   { path: "/learn/fundamentals", title: "Fundamentals", desc: "Variables, types, operators, I/O", icon: Play, color: "bg-indigo-500/20 text-indigo-400" },

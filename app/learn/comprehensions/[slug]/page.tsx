@@ -2,13 +2,12 @@ import { notFound } from "next/navigation"
 import { getAllComprehensions, getLesson as getComprehensionsLesson } from "@/lib/content/comprehensions"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
-import { Code2 } from "lucide-react"
 
 const sections = [
-  { slug: "list-comprehensions", title: "List Comprehensions", icon: Code2 },
-  { slug: "dict-comprehensions", title: "Dictionary Comprehensions", icon: Code2 },
-  { slug: "set-comprehensions", title: "Set Comprehensions", icon: Code2 },
-  { slug: "generator-expressions", title: "Generator Expressions", icon: Code2 },
+  { slug: "list-comprehensions", title: "List Comprehensions", iconKey: "MousePointer", color: "bg-pink-500/20 text-pink-400" },
+  { slug: "dict-comprehensions", title: "Dictionary Comprehensions", iconKey: "MousePointer", color: "bg-pink-500/20 text-pink-400" },
+  { slug: "set-comprehensions", title: "Set Comprehensions", iconKey: "MousePointer", color: "bg-pink-500/20 text-pink-400" },
+  { slug: "generator-expressions", title: "Generator Expressions", iconKey: "Zap", color: "bg-purple-500/20 text-purple-400" },
 ]
 
 export default function ComprehensionsLesson({ params }: { params: { slug: string } }) {
@@ -19,7 +18,7 @@ export default function ComprehensionsLesson({ params }: { params: { slug: strin
   }
 
   return (
-    <ModuleLayout sections={sections as any} moduleName="Comprehensions" modulePath="/learn/comprehensions">
+    <ModuleLayout sections={sections} moduleName="Comprehensions" modulePath="/learn/comprehensions">
       <LessonPlayer lesson={lesson} modulePath="/learn/comprehensions" allLessons={getAllComprehensions()} />
     </ModuleLayout>
   )

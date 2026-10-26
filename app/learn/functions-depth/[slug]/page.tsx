@@ -2,12 +2,11 @@ import { notFound } from "next/navigation"
 import { getAllFunctionsDepth, getLesson as getFunctionsDepthLesson } from "@/lib/content/functions-depth"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
-import { Code2 } from "lucide.react"
 
 const sections = [
-  { slug: "scope-lebg", title: "LEGB Scope Rule", icon: Code2 },
-  { slug: "default-mutable-args", title: "Default & Mutable Arguments", icon: Code2 },
-  { slug: "recursion", title: "Recursion", icon: Code2 },
+  { slug: "scope-lebg", title: "LEGB Scope Rule", iconKey: "Code2", color: "bg-blue-500/20 text-blue-400" },
+  { slug: "default-mutable-args", title: "Default & Mutable Arguments", iconKey: "Zap", color: "bg-amber-500/20 text-amber-400" },
+  { slug: "recursion", title: "Recursion", iconKey: "Code2", color: "bg-blue-500/20 text-blue-400" },
 ]
 
 export default function FunctionsDepthLesson({ params }: { params: { slug: string } }) {
@@ -18,7 +17,7 @@ export default function FunctionsDepthLesson({ params }: { params: { slug: strin
   }
 
   return (
-    <ModuleLayout sections={sections as any} moduleName="Functions Depth" modulePath="/learn/functions-depth">
+    <ModuleLayout sections={sections} moduleName="Functions Depth" modulePath="/learn/functions-depth">
       <LessonPlayer lesson={lesson} modulePath="/learn/functions-depth" allLessons={getAllFunctionsDepth()} />
     </ModuleLayout>
   )

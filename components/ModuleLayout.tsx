@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
-import { ChevronRight, Play } from "lucide.react"
+import { ChevronRight, Play } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface ModuleLayoutProps {

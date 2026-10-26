@@ -2,13 +2,12 @@ import { notFound } from "next/navigation"
 import { getAllDataStructuresDepth, getLesson as getDataStructuresDepthLesson } from "@/lib/content/data-structures-depth"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
-import { Code2 } from "lucide.react"
 
 const sections = [
-  { slug: "linked-list", title: "Linked List", icon: Code2 },
-  { slug: "stack-queue", title: "Stack & Queue", icon: Code2 },
-  { slug: "collections-module", title: "collections Module", icon: Code2 },
-  { slug: "tree-graph", title: "Tree & Graph", icon: Code2 },
+  { slug: "linked-list", title: "Linked List", iconKey: "Code2", color: "bg-purple-500/20 text-purple-400" },
+  { slug: "stack-queue", title: "Stack & Queue", iconKey: "Code2", color: "bg-purple-500/20 text-purple-400" },
+  { slug: "collections-module", title: "collections Module", iconKey: "Zap", color: "bg-blue-500/20 text-blue-400" },
+  { slug: "tree-graph", title: "Tree & Graph", iconKey: "Target", color: "bg-purple-500/20 text-purple-400" },
 ]
 
 export default function DataStructuresDepthLesson({ params }: { params: { slug: string } }) {
@@ -19,7 +18,7 @@ export default function DataStructuresDepthLesson({ params }: { params: { slug: 
   }
 
   return (
-    <ModuleLayout sections={sections as any} moduleName="Data Structures Depth" modulePath="/learn/data-structures-depth">
+    <ModuleLayout sections={sections} moduleName="Data Structures Depth" modulePath="/learn/data-structures-depth">
       <LessonPlayer lesson={lesson} modulePath="/learn/data-structures-depth" allLessons={getAllDataStructuresDepth()} />
     </ModuleLayout>
   )

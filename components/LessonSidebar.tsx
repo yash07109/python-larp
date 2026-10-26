@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
-import { ChevronRight, Play, Code2, Zap, MousePointer, Target, GraduationCap, CheckCircle2, Clock } from "lucide.react"
+import { ChevronRight, Play, Code2, Zap, MousePointer, Target, GraduationCap, CheckCircle2, Clock } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const iconMap: Record<string, any> = {

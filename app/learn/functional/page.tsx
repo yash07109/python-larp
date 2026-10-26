@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Code2 } from "lucide.react"
+import { Code2 } from "lucide-react"
 import { getAllFunctional, getLesson as getFunctionalLesson } from "@/lib/content/functional"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"

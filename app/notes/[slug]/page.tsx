@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Edit, Trash2, Clock } from "lucide.react"
+import { Edit, Trash2, Clock } from "lucide-react"
 
 type Note = {
   slug: string
@@ -12,7 +12,9 @@ type Note = {
 
 const STORAGE_KEY = "python_mastery_notes"
 
-export default function NotesPage({ lessonSlug, lessonTitle }: { lessonSlug: string; lessonTitle: string }) {
+export default function NotesPage({ params }: { params: { slug: string } }) {
+  const lessonSlug = params.slug
+  const lessonTitle = lessonSlug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
   const [notes, setNotes] = useState<Note[]>([])
   const [editing, setEditing] = useState(false)
   const [draft, setDraft] = useState("")
