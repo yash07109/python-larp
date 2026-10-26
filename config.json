@@ -1,0 +1,16 @@
+{
+  "name": "bunny",
+  "categories": [
+    "exams",
+    "assignments",
+    "workshops"
+  ],
+  "categories_have_zones": true,
+  "max_emails": 20,
+  "lookback_days": 35,
+  "timezone": "Asia/Kolkata",
+  "calendar_id": "primary",
+  "ollama_url": "http://localhost:11434/v1",
+  "ollama_model": "qwen3.5:9b",
+  "reminder_minutes": 60
+}
