@@ -74,16 +74,16 @@ done`,
     order: 2,
     difficulty: "advanced",
     estimatedTime: "25 min",
-    content: """
+    content: `
 ### Generators
-Functions that use `yield` instead of `return`. They produce values one at a time and can be paused/resumed.
+Functions that use \`yield\` instead of \`return\`. They produce values one at a time and can be paused/resumed.
 
 ### Iterator Protocol
-Objects with `__iter__()` and `__next__()` methods.
+Objects with \`__iter__()\` and \`__next__()\` methods.
 
 ### AI/ML Relevance
 Used for data pipelines, lazy loading of large datasets, and batch generators in training loops.
-    """,
+    `,
     examples: [
       {
         id: "ex1",

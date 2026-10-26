@@ -23,8 +23,8 @@ export const FUNCTIONAL_LESSONS: Lesson[] = [
     slug: "lambda-functions",
     title: "Lambda Functions",
     description: "Anonymous, single-expression functions created on the fly.",
-    order": 1,
-    difficulty": "beginner",
+    order: 1,
+    difficulty: "beginner",
     estimatedTime: "15 min",
     content: `
 ### Syntax
@@ -61,8 +61,8 @@ print((lambda x, y: x + y)(3, 7))`,
     slug: "map-filter-reduce",
     title: "map, filter, reduce",
     description: "Functional programming tools for transforming sequences.",
-    order": 2,
-    difficulty": "beginner",
+    order: 2,
+    difficulty: "beginner",
     estimatedTime: "20 min",
     content: `
 ### map(func, iterable)
@@ -104,8 +104,8 @@ print(total)`,
     slug: "partial-currying",
     title: "partial & Currying",
     description: "Partial function application with `functools.partial`.",
-    order": 3,
-    difficulty": "intermediate",
+    order: 3,
+    difficulty: "intermediate",
     estimatedTime: "20 min",
     content: `
 ### functools.partial

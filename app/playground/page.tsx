@@ -47,7 +47,7 @@ export default function Playground() {
       pyodideRef.current.setStdout({ batched: (msg: string) => {
         setOutput((prev) => prev + msg)
         outputRef.current?.scrollTop = outputRef.current.scrollHeight
-      }})
+      } })
 
       await pyodideRef.current.runPythonAsync(code)
       setIsRunning(false)

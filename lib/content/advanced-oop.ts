@@ -23,8 +23,8 @@ export const ADVANCED_OOP_LESSONS: Lesson[] = [
     slug: "metaclasses",
     title: "Metaclasses",
     description: "Classes that create classes — `type` and `__metaclass__`.",
-    order": 1,
-    difficulty": "advanced",
+    order: 1,
+    difficulty: "advanced",
     estimatedTime: "30 min",
     content: `
 ### Concept
@@ -65,8 +65,8 @@ print(MyClass.x)`,
     slug: "descriptors",
     title: "Descriptors",
     description: "Attribute access protocol — `__get__`, `__set__`, `__delete__`.",
-    order": 2,
-    difficulty": "advanced",
+    order: 2,
+    difficulty: "advanced",
     estimatedTime: "25 min",
     content: `
 ### Descriptor Protocol
@@ -109,8 +109,8 @@ print(m.learning_rate)
     slug: "mro-multiple-inheritance",
     title: "MRO & Multiple Inheritance",
     description: "Method Resolution Order, `super()`, diamond problem.",
-    order": 3,
-    difficulty": "advanced",
+    order: 3,
+    difficulty: "advanced",
     estimatedTime: "25 min",
     content: `
 ### Multiple Inheritance

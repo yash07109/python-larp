@@ -52,7 +52,7 @@ export default function QuizPage({ params }: QuizPageProps) {
   const percentage = Math.round((score / quiz.questions.length) * 100)
   const passed = percentage >= 70
 
-  const currentQuestion = quiz.questions[currentQ]
+  const currentQuestion = quiz.questions[currentQ];
 
   return (
     <div className="min-h-screen bg-background">
