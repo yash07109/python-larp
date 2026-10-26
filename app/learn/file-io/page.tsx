@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Zap } from "lucide.react"
 import { getAllFileIO, getLesson as getFileIOLesson } from "@/lib/content/file-io"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
@@ -65,11 +67,7 @@ function getEmoji(key: string) {
   return map[key] || "📘"
 }
 
-import Link from "next/link"
-import { Zap } from "lucide.react"
-import { getAllFileIO, getLesson as getFileIOLesson } from "@/lib/content/file-io"
-
-export default function FileIOLesson({ params }: { params: { slug: string } }) {
+export function FileIOLesson({ params }: { params: { slug: string } }) {
   const lesson = getFileIOLesson(params.slug)
 
   if (!lesson) {

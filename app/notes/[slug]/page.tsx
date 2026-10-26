@@ -94,7 +94,7 @@ export default function NotesPage({ lessonSlug, lessonTitle }: { lessonSlug: str
               />
             ) : (
               <div className="whitespace-pre-wrap break-words text-sm text-foreground leading-relaxed">
-                {draft || "<span className='text-muted-foreground'>No notes yet. Click edit to start writing.</span>"}
+                {draft || <span className="text-muted-foreground">No notes yet. Click edit to start writing.</span>}
               </div>
             )}
           </div>

@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Code2 } from "lucide.react"
 import { getAllFunctionsDepth, getLesson as getFunctionsDepthLesson } from "@/lib/content/functions-depth"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
@@ -65,11 +67,7 @@ function getEmoji(key: string) {
   return map[key] || "📘"
 }
 
-import Link from "next/link"
-import { Code2 } from "lucide.react"
-import { getAllFunctionsDepth, getLesson as getFunctionsDepthLesson } from "@/lib/content/functions-depth"
-
-export default function FunctionsDepthLesson({ params }: { params: { slug: string } }) {
+export function FunctionsDepthLesson({ params }: { params: { slug: string } }) {
   const lesson = getFunctionsDepthLesson(params.slug)
 
   if (!lesson) {

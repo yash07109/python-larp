@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Code2 } from "lucide.react"
 import { getAllDataStructures, getLesson as getDataStructuresLesson } from "@/lib/content/data-structures"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
@@ -71,9 +73,6 @@ function getEmoji(key: string) {
   const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
   return map[key] || "📘"
 }
-
-import Link from "next/link"
-import { Code2 } from "lucide.react"
 
 export function DataStructuresLesson({ params }: { params: { slug: string } }) {
   const lesson = getDataStructuresLesson(params.slug)

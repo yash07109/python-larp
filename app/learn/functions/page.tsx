@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Code2 } from "lucide.react"
 import { getAllFunctions, getLesson as getFunctionsLesson } from "@/lib/content/functions"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
@@ -69,9 +71,6 @@ function getEmoji(key: string) {
   const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
   return map[key] || "📘"
 }
-
-import Link from "next/link"
-import { Code2 } from "lucide.react"
 
 export function FunctionsLesson({ params }: { params: { slug: string } }) {
   const lesson = getFunctionsLesson(params.slug)

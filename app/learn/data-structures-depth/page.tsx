@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Code2 } from "lucide.react"
 import { getAllDataStructuresDepth, getLesson as getDataStructuresDepthLesson } from "@/lib/content/data-structures-depth"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
@@ -66,11 +68,7 @@ function getEmoji(key: string) {
   return map[key] || "📘"
 }
 
-import Link from "next/link"
-import { Code2 } from "lucide.react"
-import { getAllDataStructuresDepth, getLesson as getDataStructuresDepthLesson } from "@/lib/content/data-structures-depth"
-
-export default function DataStructuresDepthLesson({ params }: { params: { slug: string } }) {
+export function DataStructuresDepthLesson({ params }: { params: { slug: string } }) {
   const lesson = getDataStructuresDepthLesson(params.slug)
 
   if (!lesson) {

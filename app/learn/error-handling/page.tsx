@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Zap } from "lucide.react"
 import { getAllErrorHandling, getLesson as getErrorHandlingLesson } from "@/lib/content/error-handling"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
@@ -65,11 +67,7 @@ function getEmoji(key: string) {
   return map[key] || "📘"
 }
 
-import Link from "next/link"
-import { Zap } from "lucide.react"
-import { getAllErrorHandling, getLesson as getErrorHandlingLesson } from "@/lib/content/error-handling"
-
-export default function ErrorHandlingLesson({ params }: { params: { slug: string } }) {
+export function ErrorHandlingLesson({ params }: { params: { slug: string } }) {
   const lesson = getErrorHandlingLesson(params.slug)
 
   if (!lesson) {
