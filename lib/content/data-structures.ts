@@ -36,7 +36,7 @@ Use square brackets []. Lists can hold mixed types and are mutable.
 
 ### AI/ML Relevance
 Lists store datasets, feature vectors, and model predictions before conversion to NumPy arrays.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -74,7 +74,7 @@ Use curly braces {} with key: value pairs. Keys must be immutable.
 
 ### AI/ML Relevance
 Dicts represent JSON API responses, configuration, and labeled datasets.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -111,7 +111,7 @@ Use set() or curly braces {} with values (no key-value pairs).
 
 ### AI/ML Relevance
 Sets deduplicate data and are useful for label uniqueness checks.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -148,7 +148,7 @@ Use parentheses (). Once created, tuples cannot be modified.
 
 ### AI/ML Relevance
 Used for coordinates, RGB values, and fixed hyperparameter tuples.
-    `,
+    `
     examples: [
       {
         id: "ex1",

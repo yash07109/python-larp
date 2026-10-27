@@ -40,7 +40,7 @@ Short throwaway functions — callbacks, sorting keys, simple transformations.
 
 ### AI/ML Relevance
 Used with map, filter, and in scikit-learn/pandas for quick transformations.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -76,7 +76,7 @@ Cumulatively applies func to reduce to a single value.
 
 ### AI/ML Relevance
 Vectorized-style operations on data before converting to NumPy/pandas.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -116,7 +116,7 @@ Transform a multi-arg function into a chain of single-arg functions.
 
 ### AI/ML Relevance
 Create pre-configured model constructors or loss functions with fixed hyperparameters.
-    `,
+    `
     examples: [
       {
         id: "ex1",

@@ -36,7 +36,7 @@ Use class with __init__ as the constructor and self to refer to the instance.
 
 ### AI/ML Relevance
 Classes model datasets, models, and pipelines in ML codebases.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -84,7 +84,7 @@ Method Resolution Order determines which method is called in multiple inheritanc
 
 ### AI/ML Relevance
 Base classes for models, data loaders, and transforms in libraries like PyTorch and scikit-learn.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -128,7 +128,7 @@ Some sound`,
 
 ### AI/ML Relevance
 Enables custom objects to behave like built-in types in data pipelines.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -181,7 +181,7 @@ abc.ABC and @abstractmethod force subclasses to implement required methods.
 
 ### AI/ML Relevance
 Abstract base classes define interfaces for models, ensuring consistent APIs.
-    `,
+    `
     examples: [
       {
         id: "ex1",

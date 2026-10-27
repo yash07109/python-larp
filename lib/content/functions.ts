@@ -38,7 +38,7 @@ Document what your function does using triple-quoted strings immediately after t
 
 ### AI/ML Relevance
 Functions encapsulate model training, preprocessing, and inference logic cleanly.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -88,7 +88,7 @@ Positional args, then *args, then keyword-only, then **kwargs.
 
 ### AI/ML Relevance
 Used in library APIs (e.g., plt.plot(), model.fit()) to accept flexible options.
-    `,
+    `
     examples: [
       {
         id: "ex1",

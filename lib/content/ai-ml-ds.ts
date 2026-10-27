@@ -39,7 +39,7 @@ export const AI_ML_DS_LESSONS: Lesson[] = [
 
 ### AI/ML Relevance
 The foundation of nearly every ML library — tensors in PyTorch/TensorFlow are NumPy-like.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -82,7 +82,7 @@ print(arr.reshape(5, 1))`,
 
 ### AI/ML Relevance
 The standard tool for data cleaning, EDA, and feature preparation before ML.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -128,7 +128,7 @@ Built on Matplotlib, statistical defaults, works directly with pandas DataFrames
 
 ### AI/ML Relevance
 Visualize data distributions, training curves, confusion matrices, and feature importance.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -173,7 +173,7 @@ plt.show()`,
 
 ### AI/ML Relevance
 scikit-learn is the entry point for classical machine learning in Python.
-    `,
+    `
     examples: [
       {
         id: "ex1",

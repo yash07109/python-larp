@@ -44,7 +44,7 @@ finally:
 
 ### AI/ML Relevance
 Handle missing data files, bad API responses, and model load failures in production.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -82,7 +82,7 @@ Inherit from Exception (or a more specific built-in).
 
 ### AI/ML Relevance
 Clear error messages help debug data validation and model configuration issues.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -125,7 +125,7 @@ assert condition, "message" — crashes with AssertionError if condition is Fals
 
 ### AI/ML Relevance
 Logging tracks training runs; assertions validate data shapes and model invariants.
-    `,
+    `
     examples: [
       {
         id: "ex1",

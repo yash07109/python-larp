@@ -37,7 +37,7 @@ export const COMPREHENSIONS_LESSONS: Lesson[] = [
 
 ### AI/ML Relevance
 Used constantly for data preprocessing — filtering datasets, extracting features, transforming arrays.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -84,7 +84,7 @@ print(pairs)`,
 
 ### AI/ML Relevance
 Used to build feature dictionaries, label encodings, and config lookups.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -123,7 +123,7 @@ Like list comprehensions but uses curly braces and guarantees uniqueness.
 
 ### AI/ML Relevance
 Used for deduplicating labels, unique token sets, and vocabulary extraction.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -157,7 +157,7 @@ Large datasets where you can't fit everything in memory at once.
 
 ### AI/ML Relevance
 Critical for streaming large datasets, file processing, and batch iteration without OOM errors.
-    `,
+    `
     examples: [
       {
         id: "ex1",

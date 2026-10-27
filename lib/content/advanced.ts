@@ -38,7 +38,7 @@ Use @decorator_name above a function definition.
 
 ### AI/ML Relevance
 Used for model caching, experiment tracking, and API route protection in ML serving.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -83,7 +83,7 @@ Objects with __iter__() and __next__() methods.
 
 ### AI/ML Relevance
 Used for data pipelines, lazy loading of large datasets, and batch generators in training loops.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -119,7 +119,7 @@ Ensures setup and cleanup code runs, even if an error occurs.
 
 ### AI/ML Relevance
 Used for file I/O in data loading, GPU memory management, and safe resource cleanup.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -159,7 +159,7 @@ with Timer():
 
 ### AI/ML Relevance
 Used for concurrent model inference requests and async data pipelines in production ML serving.
-    `,
+    `
     examples: [
       {
         id: "ex1",

@@ -53,7 +53,7 @@ else:
 ## Truthiness
 
 In Python, these values are considered **falsy**:
-- \`False\`, \`None\`, \`0\`, \`0.0\`
+- \`False\` \`None\`, \`0\`, \`0.0\`
 - Empty sequences: \`""\`, \`[]\`, \`()\`
 
 Everything else is **truthy**.
@@ -155,7 +155,7 @@ You can put loops inside loops — useful for matrices, nested data structures, 
 ## AI/ML Relevance
 
 Loops power training epochs, data iteration, batch processing, and grid searches in hyperparameter tuning.
-    `,
+    `
     examples: [
       {
         id: "ex1",

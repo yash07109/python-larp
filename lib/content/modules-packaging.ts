@@ -39,7 +39,7 @@ Lets a file act as both a reusable module and a runnable script.
 
 ### AI/ML Relevance
 Understanding imports prevents circular dependency bugs in large ML codebases.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -92,7 +92,7 @@ Isolates dependencies per project so they don't conflict.
 
 ### AI/ML Relevance
 ML libraries (PyTorch, TensorFlow) have heavy dependencies — virtual environments keep them isolated.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -127,7 +127,7 @@ from . import sibling inside a package.
 
 ### AI/ML Relevance
 Large ML projects organize models, data, and utils into packages.
-    `,
+    `
     examples: [
       {
         id: "ex1",

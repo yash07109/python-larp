@@ -43,7 +43,7 @@ A nested function that remembers values from its enclosing scope even after the 
 
 ### AI/ML Relevance
 Closures power callback-based APIs, decorator state, and partial function factories in ML pipelines.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -129,7 +129,7 @@ Use None as default and create the mutable object inside the function.
 
 ### AI/ML Relevance
 Buggy default arguments cause silent data leakage across model training runs and preprocessing pipelines.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -184,7 +184,7 @@ Python does not optimize tail recursion. Deep recursion can crash.
 
 ### AI/ML Relevance
 Used in tree traversals (decision trees), divide-and-conquer algorithms, and backtracking.
-    `,
+    `
     examples: [
       {
         id: "ex1",

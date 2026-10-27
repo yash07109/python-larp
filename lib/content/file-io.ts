@@ -43,7 +43,7 @@ Automatically closes the file, even if an error occurs.
 
 ### AI/ML Relevance
 Loading raw datasets, saving model outputs, reading configuration files.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -77,7 +77,7 @@ Use the json module — json.load(), json.loads(), json.dump(), json.dumps().
 
 ### AI/ML Relevance
 CSV is the most common dataset format; JSON is the standard for APIs and config.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -145,7 +145,7 @@ Cleaner than os.path. Paths are objects, not strings.
 
 ### AI/ML Relevance
 Navigating dataset directories, finding model checkpoint files, organizing experiment outputs.
-    `,
+    `
     examples: [
       {
         id: "ex1",

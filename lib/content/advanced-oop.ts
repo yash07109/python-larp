@@ -40,7 +40,7 @@ Inherit from type and override __new__ or __init__ to modify class creation.
 
 ### AI/ML Relevance
 Framework-level code (model registries, config validation) uses metaclasses.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -77,7 +77,7 @@ property, classmethod, staticmethod, slots are all descriptors.
 
 ### AI/ML Relevance
 Validated attributes (e.g., ensuring hyperparameters stay in range).
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -126,7 +126,7 @@ Same ancestor inherited twice — MRO prevents duplicate calls.
 
 ### AI/ML Relevance
 Mixin classes for model features (e.g., Serializable, Trainable).
-    `,
+    `
     examples: [
       {
         id: "ex1",

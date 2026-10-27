@@ -45,13 +45,13 @@ Python is the **most popular language for AI, ML, and Data Science**. Almost eve
 
 There are two common ways to run Python:
 
-1. **Interactive shell (REPL)** — type `python` or `python3` in your terminal and enter code line-by-line
-2. **Script files** — save code in a `.py` file and run it with `python filename.py`
+1. **Interactive shell (REPL)** — type \`python\` or \`python3\` in your terminal and enter code line-by-line
+2. **Script files** — save code in a \`.py\` file and run it with \`python filename.py\`
 
 > 💡 This website includes a live browser playground, so you can run Python examples instantly without installing anything.
 
 > ℹ️ "Interpreted" means Python executes code directly without needing a separate compiler like C++ or Java.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -59,7 +59,7 @@ There are two common ways to run Python:
         code: `# This is a comment — Python ignores lines starting with #
 print("Hello, Python Mastery!")`,
         output: `Hello, Python Mastery!`,
-        explanation: "`print()` displays output to the console. The text inside quotes is a string literal.",
+        explanation: "\`print()\` displays output to the console. The text inside quotes is a string literal.",
       },
       {
         id: "ex2",
@@ -72,7 +72,7 @@ print(8 / 2)`,
 6
 42
 4.0`,
-        explanation: "Python handles basic math natively. Notice `/` always returns a float (4.0, not 4).",
+        explanation: "Python handles basic math natively. Notice \`/\` always returns a float (4.0, not 4).",
       },
     ],
     aiMlRelevance: true,
@@ -86,12 +86,12 @@ print(8 / 2)`,
     estimatedTime: "20 min",
     content: `# Variables
 
-A **variable** is a named container that holds a value. In Python, you create a variable simply by assigning a value to it — there is no `var`, `let`, or type declaration.
+A **variable** is a named container that holds a value. In Python, you create a variable simply by assigning a value to it — there is no \`var\` \`let\`, or type declaration.
 
-```python
+\`\`\`python
 name = "Alice"
 age = 25
-```
+\`\`\`
 
 Python infers the type automatically. This is called **dynamic typing**.
 
@@ -99,13 +99,13 @@ Python infers the type automatically. This is called **dynamic typing**.
 
 | Type | Example | Description |
 |------|---------|-------------|
-| `int` | `5`, `-3`, `1000` | Whole numbers |
-| `float` | `3.14`, `2.0`, `-0.5` | Decimal numbers |
-| `str` | `"hello"`, `'Python'` | Text |
-| `bool` | `True`, `False` | Boolean values |
-| `NoneType` | `None` | Represents absence of value |
+| \`int\` | \`5\`, \`-3\`, \`1000\` | Whole numbers |
+| \`float\` | \`3.14\`, \`2.0\`, \`-0.5\` | Decimal numbers |
+| \`str\` | \`"hello"\`, \`'Python'\` | Text |
+| \`bool\` | \`True\`, \`False\` | Boolean values |
+| \`NoneType\` | \`None\` | Represents absence of value |
 
-Use the `type()` function to check a variable's type at runtime.
+Use the \`type()\` function to check a variable's type at runtime.
 
 ## Dynamic Typing
 
@@ -140,7 +140,7 @@ print(age, price, name, is_student, result)
 print(type(age), type(price), type(name), type(is_student), type(result))`,
         output: `25 19.99 Alice True None
 <class 'int'> <class 'float'> <class 'str'> <class 'bool'> <class 'NoneType'>`,
-        explanation: "`type()` reveals the data type. Python infers types automatically from the assigned value.",
+        explanation: "\`type()\` reveals the data type. Python infers types automatically from the assigned value.",
       },
       {
         id: "ex2",
@@ -176,39 +176,39 @@ Operators perform operations on variables and values. Python groups them into se
 
 | Operator | Meaning | Example | Result |
 |----------|---------|---------|--------|
-| `+` | Addition | `5 + 3` | `8` |
-| `-` | Subtraction | `5 - 3` | `2` |
-| `*` | Multiplication | `5 * 3` | `15` |
-| `/` | Division | `5 / 3` | `1.666...` |
-| `//` | Floor division | `5 // 3` | `1` |
-| `%` | Modulus (remainder) | `5 % 3` | `2` |
-| `**` | Exponentiation | `5 ** 3` | `125` |
+| \`+\` | Addition | \`5 + 3\` | \`8\` |
+| \`-\` | Subtraction | \`5 - 3\` | \`2\` |
+| \`*\` | Multiplication | \`5 * 3\` | \`15\` |
+| \`/\` | Division | \`5 / 3\` | \`1.666...\` |
+| \`//\` | Floor division | \`5 // 3\` | \`1\` |
+| \`%\` | Modulus (remainder) | \`5 % 3\` | \`2\` |
+| \`**\` | Exponentiation | \`5 ** 3\` | \`125\` |
 
 ## Comparison Operators
 
-These return `True` or `False`:
-`==`, `!=`, `>`, `<`, `>=`, `<=`
+These return \`True\` or \`False\`:
+\`==\` \`!=\`, \`>\`, \`<\`, \`>=\`, \`<=\`
 
 ## Logical Operators
 
-- `and` — True if both operands are True
-- `or` — True if at least one operand is True
-- `not` — flips True to False and vice versa
+- \`and\` — True if both operands are True
+- \`or\` — True if at least one operand is True
+- \`not\` — flips True to False and vice versa
 
 ## Assignment Operators
 
-`=`, `+=`, `-=`, `*=`, `/=`, `//=`, `%=`, `**=`
+\`=\`, \`+=\`, \`-=\`, \`*=\`, \`/=\`, \`//=\`, \`%=\`, \`**=\`
 
-> ℹ️ Floor division `//` returns the largest integer less than or equal to the result. Modulus `%` returns the remainder.
+> ℹ️ Floor division \`//\` returns the largest integer less than or equal to the result. Modulus \`%\` returns the remainder.
 
 ## Operator Precedence
 
 Python evaluates expressions in this order:
-1. `**` (exponentiation)
-2. `*`, `/`, `//`, `%`
-3. `+`, `-`
-4. Comparisons (`==`, `>`, etc.)
-5. `not`, `and`, `or`
+1. \`**\` (exponentiation)
+2. \`*\`, \`/\`, \`//\`, \`%\`
+3. \`+\`, \`-\`
+4. Comparisons (\`==\`, \`>\`, etc.)
+5. \`not\`, \`and\`, \`or\`
     `,
     examples: [
       {
@@ -231,7 +231,7 @@ print(a ** b)  # 1000`,
 3
 1
 1000`,
-        explanation: "`/` always returns a float. `//` discards the remainder. `%` gives the remainder only.",
+        explanation: "\`/\` always returns a float. \`//\` discards the remainder. \`%\` gives the remainder only.",
       },
       {
         id: "ex2",
@@ -245,7 +245,7 @@ print(not has_id)             # False`,
         output: `True
 True
 False`,
-        explanation: "`and` needs both True. `or` needs at least one True. `not` inverts the value.",
+        explanation: "\`and\` needs both True. \`or\` needs at least one True. \`not\` inverts the value.",
       },
     ],
     aiMlRelevance: true,
@@ -259,46 +259,46 @@ False`,
     estimatedTime: "25 min",
     content: `# Strings
 
-A **string** is a sequence of characters. In Python, strings are created using single quotes `'`, double quotes `"`, or triple quotes `"""`.
+A **string** is a sequence of characters. In Python, strings are created using single quotes \`'` double quotes \`"\`, or triple quotes \`"""\`.
 
 ## Creating Strings
 
-```python
+\`\`\`python
 single = 'Hello'
 double = "World"
 multi = """This is a
 multi-line string"""
-```
+\`\`\`
 
 ## String Slicing
 
-You can extract parts of a string using `text[start:stop:step]`.
+You can extract parts of a string using \`text[start:stop:step]\`.
 
-- `text[0]` — first character
-- `text[1:4]` — characters from index 1 up to (but not including) 4
-- `text[::-1]` — reverse the string
+- \`text[0]\` — first character
+- \`text[1:4]\` — characters from index 1 up to (but not including) 4
+- \`text[::-1]\` — reverse the string
 
 ## Common String Methods
 
 | Method | Purpose |
 |--------|---------|
-| `.upper()` | Convert to uppercase |
-| `.lower()` | Convert to lowercase |
-| `.strip()` | Remove leading/trailing whitespace |
-| `.replace(old, new)` | Replace substring |
-| `.split()` | Split into a list |
-| `.join(list)` | Join list into string |
-| `.find(sub)` | Find index of substring |
+| \`.upper()\` | Convert to uppercase |
+| \`.lower()\` | Convert to lowercase |
+| \`.strip()\` | Remove leading/trailing whitespace |
+| \`.replace(old, new)\` | Replace substring |
+| \`.split()\` | Split into a list |
+| \`.join(list)\` | Join list into string |
+| \`.find(sub)\` | Find index of substring |
 
 ## f-Strings (Formatted String Literals)
 
 Introduced in Python 3.6, f-strings let you embed expressions directly inside strings:
 
-```python
+\`\`\`python
 name = "Alice"
 score = 95
 print(f"{name} scored {score} points.")
-```
+\`\`\`
 
 > 💡 f-strings are the modern, preferred way to format strings in Python.
 
@@ -324,7 +324,7 @@ print(text[::-1])             # Reverse string`,
 ['Python', 'Mastery']
 thon  
   yrasreM nohtyP  `,
-        explanation: "Slicing `[start:stop]` extracts characters. `[::-1]` reverses the string.",
+        explanation: "Slicing \`[start:stop]\` extracts characters. \`[::-1]\` reverses the string.",
       },
       {
         id: "ex2",
@@ -339,7 +339,7 @@ print(message)
 print(f"Double score: {score * 2}")`,
         output: `Alice scored 95 out of 100.
 Double score: 190`,
-        explanation: "f-strings evaluate expressions inside `{}` and embed the result in the string.",
+        explanation: "f-strings evaluate expressions inside \`{}\` and embed the result in the string.",
       },
     ],
     aiMlRelevance: true,
@@ -355,27 +355,27 @@ Double score: 190`,
 
 ## input()
 
-The `input()` function reads a line of text from the user. **It always returns a string**, even if the user types a number. Convert it with `int()` or `float()` when needed.
+The \`input()\` function reads a line of text from the user. **It always returns a string**, even if the user types a number. Convert it with \`int()\` or \`float()\` when needed.
 
 ## print()
 
-The `print()` function displays output. It accepts multiple arguments and supports `sep` (separator) and `end` (what to print at the end) parameters.
+The \`print()\` function displays output. It accepts multiple arguments and supports \`sep\` (separator) and \`end\` (what to print at the end) parameters.
 
 ## Type Conversion Functions
 
 | Function | Purpose |
 |----------|---------|
-| `int()` | Convert to integer |
-| `float()` | Convert to float |
-| `str()` | Convert to string |
-| `bool()` | Convert to boolean |
+| \`int()\` | Convert to integer |
+| \`float()\` | Convert to float |
+| \`str()\` | Convert to string |
+| \`bool()\` | Convert to boolean |
 
-> ⚠️ Forgetting to convert `input()` to a number is a common beginner bug.
+> ⚠️ Forgetting to convert \`input()\` to a number is a common beginner bug.
 
 ## AI/ML Relevance
 
-While real data science rarely uses `input()` (data comes from files/databases), understanding type conversion is critical when cleaning messy datasets.
-    `,
+While real data science rarely uses \`input()\` (data comes from files/databases), understanding type conversion is critical when cleaning messy datasets.
+    `
     examples: [
       {
         id: "ex1",
@@ -392,7 +392,7 @@ print("Loading", end="... ")`,
         output: `Hello Alice! Next year you will be 26.
 Apple, Banana, Cherry
 Loading... `,
-        explanation: "`input()` always returns a string. Wrap it with `int()` or `float()` for math.",
+        explanation: "\`input()\` always returns a string. Wrap it with \`int()\` or \`float()\` for math.",
       },
     ],
     aiMlRelevance: false,
@@ -410,18 +410,18 @@ Good code explains itself, but comments and docstrings explain the **why** behin
 
 ## Comments
 
-Start a line with `#`. Python ignores everything after `#` on that line.
+Start a line with \`#\`. Python ignores everything after \`#\` on that line.
 
-```python
+\`\`\`python
 # Calculate the area of a circle
 area = 3.14159 * radius ** 2
-```
+\`\`\`
 
 ## Docstrings
 
-Docstrings are triple-quoted strings placed immediately after a function, class, or module definition. They document what the code does and are accessible at runtime via `__doc__`.
+Docstrings are triple-quoted strings placed immediately after a function, class, or module definition. They document what the code does and are accessible at runtime via \`__doc__\`.
 
-```python
+\`\`\`python
 def circle_area(radius):
     """Calculate the area of a circle given its radius.
     
@@ -432,7 +432,7 @@ def circle_area(radius):
         float: The area of the circle.
     """
     return 3.14159 * radius ** 2
-```
+\`\`\`
 
 ## Best Practices
 
@@ -443,7 +443,7 @@ def circle_area(radius):
 ## AI/ML Relevance
 
 Well-documented preprocessing and model code makes collaboration and reproducibility much easier in data science teams.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -474,7 +474,7 @@ Calculate the area of a circle given its radius.
     Returns:
         float: The area of the circle.
 `,
-        explanation: "Docstrings are accessible at runtime via `__doc__` and are used by tools like `help()` and IDEs.",
+        explanation: "Docstrings are accessible at runtime via \`__doc__\` and are used by tools like \`help()\` and IDEs.",
       },
     ],
     aiMlRelevance: false,

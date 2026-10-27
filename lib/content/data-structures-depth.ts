@@ -35,7 +35,7 @@ Nodes contain value and next (and prev for doubly). No random access — O(n) tr
 
 ### AI/ML Relevance
 Underpins queue implementations and adjacency list graph representations.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -94,7 +94,7 @@ collections.deque with append() / popleft() — O(1). Never use list.pop(0) — 
 
 ### AI/ML Relevance
 Stacks for DFS, queues for BFS, deques for sliding window algorithms.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -136,7 +136,7 @@ print(q.popleft())  # 1`,
 
 ### AI/ML Relevance
 Counter for label distribution; defaultdict for grouping data by key.
-    `,
+    `
     examples: [
       {
         id: "ex1",
@@ -177,7 +177,7 @@ Nodes and edges. Represented as adjacency list (dict of lists).
 
 ### AI/ML Relevance
 Decision trees, neural network graphs, recommendation system graphs.
-    `,
+    `
     examples: [
       {
         id: "ex1",
