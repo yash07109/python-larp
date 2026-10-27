@@ -34,27 +34,27 @@ export const CONTROL_FLOW_LESSONS: Lesson[] = [
 
 Python uses **indentation** (not curly braces) to define code blocks. The standard is 4 spaces.
 
-```python
+\`\`\`python
 if condition:
     # runs if condition is True
 elif another_condition:
     # runs if previous conditions were False and this is True
 else:
     # runs if all above were False
-```
+\`\`\`
 
 ## Key Rules
 
-- Conditions must evaluate to `True` or `False` (or truthy/falsy values)
+- Conditions must evaluate to \`True\` or \`False\` (or truthy/falsy values)
 - Only the **first matching** block executes
-- `elif` is short for "else if"
-- `else` is optional
+- \`elif\` is short for "else if"
+- \`else\` is optional
 
 ## Truthiness
 
 In Python, these values are considered **falsy**:
-- `False`, `None`, `0`, `0.0`
-- Empty sequences: `""`, `[]`, `{}`, `()`
+- \`False\`, \`None\`, \`0\`, \`0.0\`
+- Empty sequences: \`""\`, \`[]\`, \`()\`
 
 Everything else is **truthy**.
 
@@ -81,7 +81,7 @@ else:
 
 print(f"Your grade is {grade}")`,
         output: `Your grade is B`,
-        explanation: "Only the first matching condition runs. Score 85 matches `>= 80`, so grade is B.",
+        explanation: "Only the first matching condition runs. Score 85 matches \`>= 80\`, so grade is B.",
       },
       {
         id: "ex2",
@@ -100,7 +100,7 @@ else:
     print("List is empty")`,
         output: `Name is empty
 List is empty`,
-        explanation: "Empty strings and empty lists are falsy, so the `else` blocks run.",
+        explanation: "Empty strings and empty lists are falsy, so the \`else\` blocks run.",
       },
     ],
     aiMlRelevance: true,
@@ -118,25 +118,25 @@ Loops let you repeat code multiple times — essential for processing datasets, 
 
 ## For Loops
 
-A `for` loop iterates over any **iterable**: lists, strings, tuples, dictionaries, ranges.
+A \`for\` loop iterates over any **iterable**: lists, strings, tuples, dictionaries, ranges.
 
-```python
+\`\`\`python
 for item in iterable:
     # runs once for each item
-```
+\`\`\`
 
-### `range()`
+### \`range()\`
 
-`range(n)` generates numbers from `0` to `n-1`. It's commonly used with for loops.
+\`range(n)\` generates numbers from \`0\` to \`n-1\`. It's commonly used with for loops.
 
 ## While Loops
 
-A `while` loop repeats **while a condition is True**. Use it when you don't know how many iterations you need upfront.
+A \`while\` loop repeats **while a condition is True**. Use it when you don't know how many iterations you need upfront.
 
-```python
+\`\`\`python
 while condition:
     # runs while condition is True
-```
+\`\`\`
 
 > ⚠️ Always ensure a while loop's condition eventually becomes False, or you'll create an infinite loop.
 
@@ -144,9 +144,9 @@ while condition:
 
 | Statement | Purpose |
 |-----------|---------|
-| `break` | Exit the loop immediately |
-| `continue` | Skip to the next iteration |
-| `pass` | Do nothing (placeholder) |
+| \`break\` | Exit the loop immediately |
+| \`continue\` | Skip to the next iteration |
+| \`pass\` | Do nothing (placeholder) |
 
 ## Nested Loops
 
@@ -167,7 +167,7 @@ Count: 1
 Count: 2
 Count: 3
 Count: 4`,
-        explanation: "`range(5)` produces 0, 1, 2, 3, 4 — five iterations.",
+        explanation: "\`range(5)\` produces 0, 1, 2, 3, 4 — five iterations.",
       },
       {
         id: "ex2",
@@ -184,7 +184,7 @@ Count: 4`,
 4
 5
 6`,
-        explanation: "3 is skipped by `continue`, and the loop stops entirely at 7 via `break`.",
+        explanation: "3 is skipped by \`continue\`, and the loop stops entirely at 7 via \`break\`.",
       },
       {
         id: "ex3",
@@ -196,7 +196,7 @@ while count < 3:
         output: `Count is 0
 Count is 1
 Count is 2`,
-        explanation: "The loop runs while `count < 3`, then stops when count reaches 3.",
+        explanation: "The loop runs while \`count < 3\`, then stops when count reaches 3.",
       },
     ],
     aiMlRelevance: true,
