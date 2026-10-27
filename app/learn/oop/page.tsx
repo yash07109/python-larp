@@ -1,9 +1,5 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { Code2 } from "lucide-react"
-import { getAllOOP, getLesson as getOOPLesson } from "@/lib/content/oop"
-import { ModuleLayout } from "@/components/ModuleLayout"
-import { LessonPlayer } from "@/components/LessonPlayer"
 
 const sections = [
   { slug: "classes-objects", title: "Classes & Objects", iconKey: "Code2", color: "bg-rose-500/20 text-rose-400" },
@@ -12,7 +8,12 @@ const sections = [
   { slug: "abstraction-encapsulation", title: "Abstraction & Encapsulation", iconKey: "Target", color: "bg-rose-500/20 text-rose-400" },
 ]
 
-export default function OOPIndex() {
+function getEmoji(key: string) {
+  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
+  return map[key] || "📘"
+}
+
+export default function OopIndex() {
   return (
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 w-full z-50 border-b border-border/50 bg-background/60 backdrop-blur-xl">
@@ -35,10 +36,10 @@ export default function OOPIndex() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Object-<span className="gradient-text-dark">Oriented Programming</span>
+              OOP
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Classes, inheritance, dunder methods, abstraction, and encapsulation — build scalable Python applications.
+              Learn OOP with interactive examples and exercises.
             </p>
           </div>
 
@@ -46,7 +47,7 @@ export default function OOPIndex() {
             {sections.map((section) => (
               <Link
                 key={section.slug}
-                href={`/learn/oop/${section.slug}`}
+                href={`/learn/oop/` + section.slug}
                 className="group relative p-6 rounded-3xl border border-border bg-card/80 backdrop-blur hover:border-indigo-500/30 hover:bg-card hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
               >
                 <div className="w-13 h-13 rounded-2xl flex items-center justify-center mb-4 {section.color} group-hover:scale-110 transition-transform">
@@ -60,24 +61,5 @@ export default function OOPIndex() {
         </div>
       </main>
     </div>
-  )
-}
-
-function getEmoji(key: string) {
-  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
-  return map[key] || "📘"
-}
-
-export function OOPLesson({ params }: { params: { slug: string } }) {
-  const lesson = getOOPLesson(params.slug)
-
-  if (!lesson) {
-    notFound()
-  }
-
-  return (
-    <ModuleLayout sections={sections} moduleName="OOP" modulePath="/learn/oop">
-      <LessonPlayer lesson={lesson} modulePath="/learn/oop" allLessons={getAllOOP()} />
-    </ModuleLayout>
   )
 }

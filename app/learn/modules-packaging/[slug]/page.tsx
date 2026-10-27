@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllModulesPackaging, getLesson as getModulesPackagingLesson } from "@/lib/content/modules-packaging"
+import { getAllModulesPackaging, getLesson } from "@/lib/content/modules-packaging"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -10,7 +10,7 @@ const sections = [
 ]
 
 export default function ModulesPackagingLesson({ params }: { params: { slug: string } }) {
-  const lesson = getModulesPackagingLesson(params.slug)
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

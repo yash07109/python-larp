@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllErrorHandling, getLesson as getErrorHandlingLesson } from "@/lib/content/error-handling"
+import { getAllErrorHandling, getLesson } from "@/lib/content/error-handling"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -10,7 +10,7 @@ const sections = [
 ]
 
 export default function ErrorHandlingLesson({ params }: { params: { slug: string } }) {
-  const lesson = getErrorHandlingLesson(params.slug)
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

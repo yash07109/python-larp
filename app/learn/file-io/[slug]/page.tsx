@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllFileIO, getLesson as getFileIOLesson } from "@/lib/content/file-io"
+import { getAllFileIO, getLesson } from "@/lib/content/file-io"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -9,8 +9,8 @@ const sections = [
   { slug: "pathlib", title: "pathlib — Modern Paths", iconKey: "Zap", color: "bg-lime-500/20 text-lime-400" },
 ]
 
-export default function FileIOLesson({ params }: { params: { slug: string } }) {
-  const lesson = getFileIOLesson(params.slug)
+export default function FileIoLesson({ params }: { params: { slug: string } }) {
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

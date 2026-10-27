@@ -28,11 +28,11 @@ export const DATA_STRUCTURES_LESSONS: Lesson[] = [
     estimatedTime: "20 min",
     content: `
 ### Creating Lists
-Use square brackets `[]`. Lists can hold mixed types and are mutable.
+Use square brackets []. Lists can hold mixed types and are mutable.
 
 ### Common Methods
-- `.append()`, `.insert()`, `.remove()`, `.pop()`, `.sort()`, `.reverse()`
-- `len()`, `in`, indexing `list[0]`, slicing `list[1:3]`
+- append(), insert(), remove(), pop(), sort(), reverse()
+- len(), in, indexing list[0], slicing list[1:3]
 
 ### AI/ML Relevance
 Lists store datasets, feature vectors, and model predictions before conversion to NumPy arrays.
@@ -64,13 +64,13 @@ True`,
     estimatedTime: "20 min",
     content: `
 ### Creating Dictionaries
-Use curly braces `{}` with `key: value` pairs. Keys must be immutable.
+Use curly braces {} with key: value pairs. Keys must be immutable.
 
 ### Operations
-- Access: `d["key"]`
-- Add/Update: `d["key"] = value`
-- Delete: `del d["key"]`
-- Methods: `.keys()`, `.values()`, `.items()`, `.get()`
+- Access: d["key"]
+- Add/Update: d["key"] = value
+- Delete: del d["key"]
+- Methods: .keys(), .values(), .items(), .get()
 
 ### AI/ML Relevance
 Dicts represent JSON API responses, configuration, and labeled datasets.
@@ -85,7 +85,7 @@ user["age"] = 25
 print(user.get("email", "not provided"))`,
         output: `Alice
 not provided`,
-        explanation: "`.get()` safely returns a default if the key is missing.",
+        explanation: ".get() safely returns a default if the key is missing.",
       },
     ],
     aiMlRelevance: true,
@@ -99,15 +99,15 @@ not provided`,
     estimatedTime: "15 min",
     content: `
 ### Creating Sets
-Use `set()` or curly braces `{}` with values (no key-value pairs).
+Use set() or curly braces {} with values (no key-value pairs).
 
 ### Properties
 - Unordered
 - No duplicates allowed
-- Fast membership testing (`in`)
+- Fast membership testing (in)
 
 ### Operations
-- `.add()`, `.remove()`, union `\|`, intersection `&`, difference `-`
+- .add(), .remove(), union |, intersection &, difference -
 
 ### AI/ML Relevance
 Sets deduplicate data and are useful for label uniqueness checks.
@@ -139,7 +139,7 @@ print(a - b)    # difference`,
     estimatedTime: "10 min",
     content: `
 ### Creating Tuples
-Use parentheses `()`. Once created, tuples cannot be modified.
+Use parentheses (). Once created, tuples cannot be modified.
 
 ### Why Tuples?
 - Faster than lists

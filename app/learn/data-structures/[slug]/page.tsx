@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllDataStructures, getLesson as getDataStructuresLesson } from "@/lib/content/data-structures"
+import { getAllDataStructures, getLesson } from "@/lib/content/data-structures"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -11,7 +11,7 @@ const sections = [
 ]
 
 export default function DataStructuresLesson({ params }: { params: { slug: string } }) {
-  const lesson = getDataStructuresLesson(params.slug)
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

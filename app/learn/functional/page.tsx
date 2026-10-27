@@ -1,15 +1,16 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { Code2 } from "lucide-react"
-import { getAllFunctional, getLesson as getFunctionalLesson } from "@/lib/content/functional"
-import { ModuleLayout } from "@/components/ModuleLayout"
-import { LessonPlayer } from "@/components/LessonPlayer"
 
 const sections = [
   { slug: "lambda-functions", title: "Lambda Functions", iconKey: "Code2", color: "bg-cyan-500/20 text-cyan-400" },
   { slug: "map-filter-reduce", title: "map, filter, reduce", iconKey: "Code2", color: "bg-cyan-500/20 text-cyan-400" },
   { slug: "partial-currying", title: "partial & Currying", iconKey: "Code2", color: "bg-cyan-500/20 text-cyan-400" },
 ]
+
+function getEmoji(key: string) {
+  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
+  return map[key] || "📘"
+}
 
 export default function FunctionalIndex() {
   return (
@@ -34,10 +35,10 @@ export default function FunctionalIndex() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Functional <span className="gradient-text-dark">Python</span>
+              Functional Python
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Lambda functions, map/filter/reduce, partial application — functional programming techniques.
+              Learn Functional Python with interactive examples and exercises.
             </p>
           </div>
 
@@ -45,7 +46,7 @@ export default function FunctionalIndex() {
             {sections.map((section) => (
               <Link
                 key={section.slug}
-                href={`/learn/functional/${section.slug}`}
+                href={`/learn/functional/` + section.slug}
                 className="group relative p-6 rounded-3xl border border-border bg-card/80 backdrop-blur hover:border-indigo-500/30 hover:bg-card hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
               >
                 <div className="w-13 h-13 rounded-2xl flex items-center justify-center mb-4 {section.color} group-hover:scale-110 transition-transform">
@@ -59,24 +60,5 @@ export default function FunctionalIndex() {
         </div>
       </main>
     </div>
-  )
-}
-
-function getEmoji(key: string) {
-  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
-  return map[key] || "📘"
-}
-
-export function FunctionalLesson({ params }: { params: { slug: string } }) {
-  const lesson = getFunctionalLesson(params.slug)
-
-  if (!lesson) {
-    notFound()
-  }
-
-  return (
-    <ModuleLayout sections={sections} moduleName="Functional Python" modulePath="/learn/functional">
-      <LessonPlayer lesson={lesson} modulePath="/learn/functional" allLessons={getAllFunctional()} />
-    </ModuleLayout>
   )
 }

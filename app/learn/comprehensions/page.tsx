@@ -1,9 +1,5 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { MousePointer } from "lucide-react"
-import { getAllComprehensions, getLesson as getComprehensionsLesson } from "@/lib/content/comprehensions"
-import { ModuleLayout } from "@/components/ModuleLayout"
-import { LessonPlayer } from "@/components/LessonPlayer"
 
 const sections = [
   { slug: "list-comprehensions", title: "List Comprehensions", iconKey: "MousePointer", color: "bg-pink-500/20 text-pink-400" },
@@ -11,6 +7,11 @@ const sections = [
   { slug: "set-comprehensions", title: "Set Comprehensions", iconKey: "MousePointer", color: "bg-pink-500/20 text-pink-400" },
   { slug: "generator-expressions", title: "Generator Expressions", iconKey: "Zap", color: "bg-purple-500/20 text-purple-400" },
 ]
+
+function getEmoji(key: string) {
+  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
+  return map[key] || "📘"
+}
 
 export default function ComprehensionsIndex() {
   return (
@@ -38,7 +39,7 @@ export default function ComprehensionsIndex() {
               Comprehensions
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              List, dict, set comprehensions and generator expressions — write concise, Pythonic code.
+              Learn Comprehensions with interactive examples and exercises.
             </p>
           </div>
 
@@ -46,7 +47,7 @@ export default function ComprehensionsIndex() {
             {sections.map((section) => (
               <Link
                 key={section.slug}
-                href={`/learn/comprehensions/${section.slug}`}
+                href={`/learn/comprehensions/` + section.slug}
                 className="group relative p-6 rounded-3xl border border-border bg-card/80 backdrop-blur hover:border-indigo-500/30 hover:bg-card hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
               >
                 <div className="w-13 h-13 rounded-2xl flex items-center justify-center mb-4 {section.color} group-hover:scale-110 transition-transform">
@@ -60,24 +61,5 @@ export default function ComprehensionsIndex() {
         </div>
       </main>
     </div>
-  )
-}
-
-function getEmoji(key: string) {
-  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
-  return map[key] || "📘"
-}
-
-export function ComprehensionsLesson({ params }: { params: { slug: string } }) {
-  const lesson = getComprehensionsLesson(params.slug)
-
-  if (!lesson) {
-    notFound()
-  }
-
-  return (
-    <ModuleLayout sections={sections} moduleName="Comprehensions" modulePath="/learn/comprehensions">
-      <LessonPlayer lesson={lesson} modulePath="/learn/comprehensions" allLessons={getAllComprehensions()} />
-    </ModuleLayout>
   )
 }

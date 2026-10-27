@@ -33,8 +33,8 @@ export const AI_ML_DS_LESSONS: Lesson[] = [
 - Broadcasting rules for different-shaped arrays
 
 ### Core Concepts
-- `np.array()`, `np.zeros()`, `np.ones()`, `np.arange()`
-- `.shape`, `.dtype`, `.reshape()`, `.T`
+- np.array(), np.zeros(), np.ones(), np.arange()
+- .shape, .dtype, .reshape(), .T
 - Element-wise math, dot products, slicing
 
 ### AI/ML Relevance
@@ -71,14 +71,14 @@ print(arr.reshape(5, 1))`,
     estimatedTime: "30 min",
     content: `
 ### Core Objects
-- `Series` — 1D labeled array
-- `DataFrame` — 2D labeled table (like Excel/SQL)
+- Series — 1D labeled array
+- DataFrame — 2D labeled table (like Excel/SQL)
 
 ### Operations
-- `pd.read_csv()`, `pd.DataFrame()`
-- `.head()`, `.info()`, `.describe()`
-- Indexing: `df[col]`, `df.loc[]`, `df.iloc[]`
-- `.groupby()`, `.merge()`, `.fillna()`, `.dropna()`
+- pd.read_csv(), pd.DataFrame()
+- .head(), .info(), .describe()
+- Indexing: df[col], df.loc[], df.iloc[]
+- .groupby(), .merge(), .fillna(), .dropna()
 
 ### AI/ML Relevance
 The standard tool for data cleaning, EDA, and feature preparation before ML.
@@ -118,7 +118,7 @@ Name: score, dtype: float64`,
     estimatedTime: "25 min",
     content: `
 ### Matplotlib
-The foundational plotting library. `pyplot` interface is MATLAB-like.
+The foundational plotting library. pyplot interface is MATLAB-like.
 
 ### Seaborn
 Built on Matplotlib, statistical defaults, works directly with pandas DataFrames.

@@ -31,7 +31,7 @@ export const ADVANCED_LESSONS: Lesson[] = [
 A decorator is a function that takes another function and returns a new (usually enhanced) function.
 
 ### Syntax
-Use `@decorator_name` above a function definition.
+Use @decorator_name above a function definition.
 
 ### Common Use Cases
 - Logging, timing, authentication, caching, retry logic
@@ -62,7 +62,7 @@ def slow_function():
 print(slow_function())`,
         output: `slow_function took 0.5001s
 done`,
-        explanation: "The `@timer` syntax wraps `slow_function` with timing logic.",
+        explanation: "The @timer syntax wraps slow_function with timing logic.",
       },
     ],
     aiMlRelevance: true,
@@ -70,16 +70,16 @@ done`,
   {
     slug: "generators-iterators",
     title: "Generators & Iterators",
-    description: "Lazy iteration with `yield` and the iterator protocol.",
+    description: "Lazy iteration with yield and the iterator protocol.",
     order: 2,
     difficulty: "advanced",
     estimatedTime: "25 min",
     content: `
 ### Generators
-Functions that use \`yield\` instead of \`return\`. They produce values one at a time and can be paused/resumed.
+Functions that use yield instead of return. They produce values one at a time and can be paused/resumed.
 
 ### Iterator Protocol
-Objects with \`__iter__()\` and \`__next__()\` methods.
+Objects with __iter__() and __next__() methods.
 
 ### AI/ML Relevance
 Used for data pipelines, lazy loading of large datasets, and batch generators in training loops.
@@ -96,7 +96,7 @@ Used for data pipelines, lazy loading of large datasets, and batch generators in
 
 print(list(fibonacci(10)))`,
         output: `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]`,
-        explanation: "`yield` produces values lazily instead of building the whole list.",
+        explanation: "yield produces values lazily instead of building the whole list.",
       },
     ],
     aiMlRelevance: true,
@@ -104,16 +104,16 @@ print(list(fibonacci(10)))`,
   {
     slug: "context-managers",
     title: "Context Managers",
-    description: "Manage resources safely with `with` and `__enter__`/`__exit__`.",
+    description: "Manage resources safely with with and __enter__/__exit__.",
     order: 3,
     difficulty: "advanced",
     estimatedTime: "20 min",
     content: `
-### The `with` Statement
+### The with Statement
 Ensures setup and cleanup code runs, even if an error occurs.
 
 ### Common Examples
-- `open()` for files
+- open() for files
 - Database connections
 - Locks, timers, suppression
 
@@ -144,15 +144,15 @@ with Timer():
   {
     slug: "asyncio",
     title: "AsyncIO",
-    description: "Asynchronous programming with `async`/`await` for concurrent I/O.",
+    description: "Asynchronous programming with async/await for concurrent I/O.",
     order: 4,
     difficulty: "advanced",
     estimatedTime: "25 min",
     content: `
 ### Core Concepts
-- `async def` — defines a coroutine
-- `await` — pauses until an awaitable completes
-- `asyncio.run()` — starts the event loop
+- async def — defines a coroutine
+- await — pauses until an awaitable completes
+- asyncio.run() — starts the event loop
 
 ### Use Cases
 - API calls, web scraping, concurrent database queries
@@ -178,7 +178,7 @@ async def main():
 asyncio.run(main())`,
         output: `Fetching https://api.example.com...
 Data from https://api.example.com`,
-        explanation: "`await` yields control back to the event loop during sleep.",
+        explanation: "await yields control back to the event loop during sleep.",
       },
     ],
     aiMlRelevance: true,

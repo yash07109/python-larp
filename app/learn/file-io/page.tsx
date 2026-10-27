@@ -1,9 +1,5 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { Zap } from "lucide-react"
-import { getAllFileIO, getLesson as getFileIOLesson } from "@/lib/content/file-io"
-import { ModuleLayout } from "@/components/ModuleLayout"
-import { LessonPlayer } from "@/components/LessonPlayer"
 
 const sections = [
   { slug: "reading-writing-files", title: "Reading & Writing Files", iconKey: "Zap", color: "bg-lime-500/20 text-lime-400" },
@@ -11,7 +7,12 @@ const sections = [
   { slug: "pathlib", title: "pathlib — Modern Paths", iconKey: "Zap", color: "bg-lime-500/20 text-lime-400" },
 ]
 
-export default function FileIOIndex() {
+function getEmoji(key: string) {
+  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
+  return map[key] || "📘"
+}
+
+export default function FileIoIndex() {
   return (
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 w-full z-50 border-b border-border/50 bg-background/60 backdrop-blur-xl">
@@ -34,10 +35,10 @@ export default function FileIOIndex() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              File <span className="gradient-text-dark">I/O</span>
+              File I/O
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Files, CSV, JSON, pathlib — read, write, and manage data like a pro.
+              Learn File I/O with interactive examples and exercises.
             </p>
           </div>
 
@@ -45,7 +46,7 @@ export default function FileIOIndex() {
             {sections.map((section) => (
               <Link
                 key={section.slug}
-                href={`/learn/file-io/${section.slug}`}
+                href={`/learn/file-io/` + section.slug}
                 className="group relative p-6 rounded-3xl border border-border bg-card/80 backdrop-blur hover:border-indigo-500/30 hover:bg-card hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
               >
                 <div className="w-13 h-13 rounded-2xl flex items-center justify-center mb-4 {section.color} group-hover:scale-110 transition-transform">
@@ -59,24 +60,5 @@ export default function FileIOIndex() {
         </div>
       </main>
     </div>
-  )
-}
-
-function getEmoji(key: string) {
-  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
-  return map[key] || "📘"
-}
-
-export function FileIOLesson({ params }: { params: { slug: string } }) {
-  const lesson = getFileIOLesson(params.slug)
-
-  if (!lesson) {
-    notFound()
-  }
-
-  return (
-    <ModuleLayout sections={sections} moduleName="File I/O" modulePath="/learn/file-io">
-      <LessonPlayer lesson={lesson} modulePath="/learn/file-io" allLessons={getAllFileIO()} />
-    </ModuleLayout>
   )
 }

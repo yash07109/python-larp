@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllComprehensions, getLesson as getComprehensionsLesson } from "@/lib/content/comprehensions"
+import { getAllComprehensions, getLesson } from "@/lib/content/comprehensions"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -11,7 +11,7 @@ const sections = [
 ]
 
 export default function ComprehensionsLesson({ params }: { params: { slug: string } }) {
-  const lesson = getComprehensionsLesson(params.slug)
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

@@ -80,7 +80,7 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
             href={quizPath}
             className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card/50 text-sm font-medium hover:bg-accent hover:border-indigo-500/30 transition-colors"
           >
-            <Quiz className="w-4 h-4" /> Quiz
+            Quiz
           </Link>
           <Link
             href={notesPath}

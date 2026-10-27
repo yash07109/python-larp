@@ -22,16 +22,16 @@ export const ADVANCED_OOP_LESSONS: Lesson[] = [
   {
     slug: "metaclasses",
     title: "Metaclasses",
-    description: "Classes that create classes — `type` and `__metaclass__`.",
+    description: "Classes that create classes — type and __metaclass__.",
     order: 1,
     difficulty: "advanced",
     estimatedTime: "30 min",
     content: `
 ### Concept
-A class is an instance of a metaclass. Default metaclass is `type`.
+A class is an instance of a metaclass. Default metaclass is type.
 
 ### Custom Metaclass
-Inherit from `type` and override `__new__` or `__init__` to modify class creation.
+Inherit from type and override __new__ or __init__ to modify class creation.
 
 ### Use Cases
 - Auto-registering plugins
@@ -56,7 +56,7 @@ class MyClass(metaclass=Meta):
 print(MyClass.x)`,
         output: `Creating class MyClass
 1`,
-        explanation: "Meta runs when `MyClass` is defined, not when instantiated.",
+        explanation: "Meta runs when MyClass is defined, not when instantiated.",
       },
     ],
     aiMlRelevance: false,
@@ -64,16 +64,16 @@ print(MyClass.x)`,
   {
     slug: "descriptors",
     title: "Descriptors",
-    description: "Attribute access protocol — `__get__`, `__set__`, `__delete__`.",
+    description: "Attribute access protocol — __get__, __set__, __delete__.",
     order: 2,
     difficulty: "advanced",
     estimatedTime: "25 min",
     content: `
 ### Descriptor Protocol
-An object with `__get__`, `__set__`, or `__delete__` controls attribute access on another class.
+An object with __get__, __set__, or __delete__ controls attribute access on another class.
 
 ### Built-in Descriptors
-`property`, `classmethod`, `staticmethod`, `slots` are all descriptors.
+property, classmethod, staticmethod, slots are all descriptors.
 
 ### AI/ML Relevance
 Validated attributes (e.g., ensuring hyperparameters stay in range).
@@ -97,8 +97,7 @@ class Model:
 
 m = Model()
 m.learning_rate = 0.01
-print(m.learning_rate)
-# m.learning_rate = -1  # ValueError`,
+print(m.learning_rate)`,
         output: `0.01`,
         explanation: "Descriptor intercepts attribute assignment to validate.",
       },
@@ -108,7 +107,7 @@ print(m.learning_rate)
   {
     slug: "mro-multiple-inheritance",
     title: "MRO & Multiple Inheritance",
-    description: "Method Resolution Order, `super()`, diamond problem.",
+    description: "Method Resolution Order, super(), diamond problem.",
     order: 3,
     difficulty: "advanced",
     estimatedTime: "25 min",
@@ -117,16 +116,16 @@ print(m.learning_rate)
 A class can inherit from multiple parents.
 
 ### MRO
-Method Resolution Order — C3 linearization. Check with `ClassName.__mro__`.
+Method Resolution Order — C3 linearization. Check with ClassName.__mro__.
 
-### `super()`
+### super()
 Calls next method in MRO, not just the parent. Cooperative multiple inheritance.
 
 ### Diamond Problem
 Same ancestor inherited twice — MRO prevents duplicate calls.
 
 ### AI/ML Relevance
-Mixin classes for model features (e.g., `Serializable`, `Trainable`).
+Mixin classes for model features (e.g., Serializable, Trainable).
     `,
     examples: [
       {

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllControlFlow, getLesson as getControlFlowLesson } from "@/lib/content/control-flow"
+import { getAllControlFlow, getLesson } from "@/lib/content/control-flow"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -9,7 +9,7 @@ const sections = [
 ]
 
 export default function ControlFlowLesson({ params }: { params: { slug: string } }) {
-  const lesson = getControlFlowLesson(params.slug)
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

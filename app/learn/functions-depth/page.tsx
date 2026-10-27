@@ -1,15 +1,16 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { Code2 } from "lucide-react"
-import { getAllFunctionsDepth, getLesson as getFunctionsDepthLesson } from "@/lib/content/functions-depth"
-import { ModuleLayout } from "@/components/ModuleLayout"
-import { LessonPlayer } from "@/components/LessonPlayer"
 
 const sections = [
   { slug: "scope-lebg", title: "LEGB Scope Rule", iconKey: "Code2", color: "bg-blue-500/20 text-blue-400" },
   { slug: "default-mutable-args", title: "Default & Mutable Arguments", iconKey: "Zap", color: "bg-amber-500/20 text-amber-400" },
   { slug: "recursion", title: "Recursion", iconKey: "Code2", color: "bg-blue-500/20 text-blue-400" },
 ]
+
+function getEmoji(key: string) {
+  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
+  return map[key] || "📘"
+}
 
 export default function FunctionsDepthIndex() {
   return (
@@ -34,10 +35,10 @@ export default function FunctionsDepthIndex() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Functions <span className="gradient-text-dark">Depth</span>
+              Functions Depth
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              LEGB scope, closures, recursion, mutable defaults — master functions at a professional level.
+              Learn Functions Depth with interactive examples and exercises.
             </p>
           </div>
 
@@ -45,7 +46,7 @@ export default function FunctionsDepthIndex() {
             {sections.map((section) => (
               <Link
                 key={section.slug}
-                href={`/learn/functions-depth/${section.slug}`}
+                href={`/learn/functions-depth/` + section.slug}
                 className="group relative p-6 rounded-3xl border border-border bg-card/80 backdrop-blur hover:border-indigo-500/30 hover:bg-card hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
               >
                 <div className="w-13 h-13 rounded-2xl flex items-center justify-center mb-4 {section.color} group-hover:scale-110 transition-transform">
@@ -59,24 +60,5 @@ export default function FunctionsDepthIndex() {
         </div>
       </main>
     </div>
-  )
-}
-
-function getEmoji(key: string) {
-  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
-  return map[key] || "📘"
-}
-
-export function FunctionsDepthLesson({ params }: { params: { slug: string } }) {
-  const lesson = getFunctionsDepthLesson(params.slug)
-
-  if (!lesson) {
-    notFound()
-  }
-
-  return (
-    <ModuleLayout sections={sections} moduleName="Functions Depth" modulePath="/learn/functions-depth">
-      <LessonPlayer lesson={lesson} modulePath="/learn/functions-depth" allLessons={getAllFunctionsDepth()} />
-    </ModuleLayout>
   )
 }

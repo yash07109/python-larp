@@ -29,14 +29,14 @@ export const FUNCTIONS_DEPTH_LESSONS: Lesson[] = [
     content: `
 ### The LEGB Rule
 Python searches names in this order:
-1. **L**ocal — inside the current function
-2. **E**nclosing — inside any nested/outer functions
-3. **G**lobal — module level
-4. **B**uilt-in — Python built-ins (`len`, `print`, `range`)
+1. L — Local — inside the current function
+2. E — Enclosing — inside any nested/outer functions
+3. G — Global — module level
+4. B — Built-in — Python built-ins (len, print, range)
 
-### `global` vs `nonlocal`
-- `global x` — assign to module-level `x`
-- `nonlocal x` — assign to nearest enclosing scope `x` (not global, not local)
+### global vs nonlocal
+- global x — assign to module-level x
+- nonlocal x — assign to nearest enclosing scope x (not global, not local)
 
 ### Closures
 A nested function that remembers values from its enclosing scope even after the outer function returns.
@@ -91,7 +91,7 @@ print(count)`,
         output: `1
 2
 0`,
-        explanation: "`nonlocal` modifies enclosing scope; `global` modifies module scope.",
+        explanation: "nonlocal modifies enclosing scope; global modifies module scope.",
       },
       {
         id: "ex3",
@@ -108,7 +108,7 @@ print(double(5))
 print(triple(5))`,
         output: `10
 15`,
-        explanation: "`multiplier` remembers `n` from `make_multiplier`'s scope after it returns.",
+        explanation: "multiplier remembers n from make_multiplier's scope after it returns.",
       },
     ],
     aiMlRelevance: true,
@@ -122,10 +122,10 @@ print(triple(5))`,
     estimatedTime: "20 min",
     content: `
 ### The Trap
-Default arguments are evaluated **once at definition time**, not at call time. If a default is mutable (list, dict, set), all calls share the same object.
+Default arguments are evaluated once at definition time, not at call time. If a default is mutable (list, dict, set), all calls share the same object.
 
 ### The Fix
-Use `None` as default and create the mutable object inside the function.
+Use None as default and create the mutable object inside the function.
 
 ### AI/ML Relevance
 Buggy default arguments cause silent data leakage across model training runs and preprocessing pipelines.
@@ -173,14 +173,14 @@ print(add_item(2))`,
     estimatedTime: "25 min",
     content: `
 ### Anatomy
-- **Base case** — stops recursion
-- **Recursive case** — calls itself with a smaller problem
+- Base case — stops recursion
+- Recursive case — calls itself with a smaller problem
 
-### `sys.setrecursionlimit`
+### sys.setrecursionlimit
 Python limits recursion depth (default ~1000) to prevent stack overflow.
 
 ### Tail Recursion
-Python does **not** optimize tail recursion. Deep recursion can crash.
+Python does not optimize tail recursion. Deep recursion can crash.
 
 ### AI/ML Relevance
 Used in tree traversals (decision trees), divide-and-conquer algorithms, and backtracking.

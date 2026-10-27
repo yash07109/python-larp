@@ -28,7 +28,7 @@ export const DATA_STRUCTURES_DEPTH_LESSONS: Lesson[] = [
     estimatedTime: "25 min",
     content: `
 ### Concept
-Nodes contain `value` and `next` (and `prev` for doubly). No random access — O(n) traversal.
+Nodes contain value and next (and prev for doubly). No random access — O(n) traversal.
 
 ### Operations
 - Append, prepend, insert, delete, search — all O(n) except head ops O(1)
@@ -81,16 +81,16 @@ print(ll)`,
   {
     slug: "stack-queue",
     title: "Stack & Queue",
-    description: "LIFO and FIFO using lists and `collections.deque`.",
+    description: "LIFO and FIFO using lists and collections.deque.",
     order: 2,
     difficulty: "intermediate",
     estimatedTime: "20 min",
     content: `
 ### Stack (LIFO)
-`list.append()` / `list.pop()` from the end — O(1).
+list.append() / list.pop() from the end — O(1).
 
 ### Queue (FIFO)
-`collections.deque` with `append()` / `popleft()` — O(1). Never use `list.pop(0)` — O(n).
+collections.deque with append() / popleft() — O(1). Never use list.pop(0) — O(n).
 
 ### AI/ML Relevance
 Stacks for DFS, queues for BFS, deques for sliding window algorithms.
@@ -128,14 +128,14 @@ print(q.popleft())  # 1`,
     estimatedTime: "25 min",
     content: `
 ### Key Tools
-- `deque` — fast appends/pops from both ends
-- `Counter` — count hashable objects
-- `defaultdict` — auto-initialize missing keys
-- `OrderedDict` — remember insertion order (less needed in Py3.7+)
-- `namedtuple` — lightweight immutable records
+- deque — fast appends/pops from both ends
+- Counter — count hashable objects
+- defaultdict — auto-initialize missing keys
+- OrderedDict — remember insertion order (less needed in Py3.7+)
+- namedtuple — lightweight immutable records
 
 ### AI/ML Relevance
-`Counter` for label distribution; `defaultdict` for grouping data by key.
+Counter for label distribution; defaultdict for grouping data by key.
     `,
     examples: [
       {
@@ -166,14 +166,14 @@ print(dict(grouped))`,
     estimatedTime: "30 min",
     content: `
 ### Tree
-Hierarchical nodes. Binary tree: each node has ≤2 children.
+Hierarchical nodes. Binary tree: each node has <= 2 children.
 
 ### Graph
 Nodes and edges. Represented as adjacency list (dict of lists).
 
 ### Traversals
-- **DFS** — stack/recursion, go deep
-- **BFS** — queue, go level by level
+- DFS — stack/recursion, go deep
+- BFS — queue, go level by level
 
 ### AI/ML Relevance
 Decision trees, neural network graphs, recommendation system graphs.

@@ -22,24 +22,24 @@ export const FILE_IO_LESSONS: Lesson[] = [
   {
     slug: "reading-writing-files",
     title: "Reading & Writing Files",
-    description: "Open, read, write, and close files safely with `with`.",
+    description: "Open, read, write, and close files safely with with.",
     order: 1,
     difficulty: "beginner",
     estimatedTime: "20 min",
     content: `
-### The `with` Statement
+### The with Statement
 Automatically closes the file, even if an error occurs.
 
 ### Modes
-- `'r'` read (default)
-- `'w'` write (truncates)
-- `'a'` append
-- `'r+'` read and write
-- `'b'` binary mode
+- 'r' read (default)
+- 'w' write (truncates)
+- 'a' append
+- 'r+' read and write
+- 'b' binary mode
 
 ### Methods
-- `.read()`, `.readline()`, `.readlines()`
-- `.write()`, `.writelines()`
+- .read(), .readline(), .readlines()
+- .write(), .writelines()
 
 ### AI/ML Relevance
 Loading raw datasets, saving model outputs, reading configuration files.
@@ -49,14 +49,14 @@ Loading raw datasets, saving model outputs, reading configuration files.
         id: "ex1",
         title: "Write & Read File",
         code: `with open("notes.txt", "w") as f:
-    f.write("Line 1\\nLine 2\\n")
+    f.write("Line 1\nLine 2\n")
 
 with open("notes.txt", "r") as f:
     content = f.read()
     print(content)`,
         output: `Line 1
 Line 2`,
-        explanation: "`with` ensures the file closes after the block.",
+        explanation: "with ensures the file closes after the block.",
       },
     ],
     aiMlRelevance: true,
@@ -70,10 +70,10 @@ Line 2`,
     estimatedTime: "20 min",
     content: `
 ### CSV
-Use the `csv` module — `csv.reader`, `csv.writer`, `csv.DictReader`, `csv.DictWriter`.
+Use the csv module — csv.reader, csv.writer, csv.DictReader, csv.DictWriter.
 
 ### JSON
-Use the `json` module — `json.load()`, `json.loads()`, `json.dump()`, `json.dumps()`.
+Use the json module — json.load(), json.loads(), json.dump(), json.dumps().
 
 ### AI/ML Relevance
 CSV is the most common dataset format; JSON is the standard for APIs and config.
@@ -120,7 +120,7 @@ print(loaded["skills"])`,
   "active": true
 }
 ['Python', 'ML']`,
-        explanation: "`dumps` serializes to string; `loads` deserializes from string.",
+        explanation: "dumps serializes to string; loads deserializes from string.",
       },
     ],
     aiMlRelevance: true,
@@ -128,20 +128,20 @@ print(loaded["skills"])`,
   {
     slug: "pathlib",
     title: "pathlib — Modern Paths",
-    description: "Object-oriented filesystem paths with `pathlib.Path`.",
+    description: "Object-oriented filesystem paths with pathlib.Path.",
     order: 3,
     difficulty: "intermediate",
     estimatedTime: "20 min",
     content: `
 ### Why pathlib
-Cleaner than `os.path`. Paths are objects, not strings.
+Cleaner than os.path. Paths are objects, not strings.
 
 ### Common Operations
-- `Path("file.txt").exists()`
-- `Path("dir").mkdir(parents=True, exist_ok=True)`
-- `path / "sub" / "file"` (join with `/`)
-- `path.read_text()`, `path.write_text()`
-- `path.glob("*.py")`
+- Path("file.txt").exists()
+- Path("dir").mkdir(parents=True, exist_ok=True)
+- path / "sub" / "file" (join with /)
+- path.read_text(), path.write_text()
+- path.glob("*.py")
 
 ### AI/ML Relevance
 Navigating dataset directories, finding model checkpoint files, organizing experiment outputs.
@@ -169,7 +169,7 @@ checkpoint.pth
 data/models
 
 done`,
-        explanation: "Path objects support `/` joining and have rich attributes.",
+        explanation: "Path objects support / joining and have rich attributes.",
       },
     ],
     aiMlRelevance: true,

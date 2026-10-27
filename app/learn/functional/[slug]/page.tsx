@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllFunctional, getLesson as getFunctionalLesson } from "@/lib/content/functional"
+import { getAllFunctional, getLesson } from "@/lib/content/functional"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -10,7 +10,7 @@ const sections = [
 ]
 
 export default function FunctionalLesson({ params }: { params: { slug: string } }) {
-  const lesson = getFunctionalLesson(params.slug)
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

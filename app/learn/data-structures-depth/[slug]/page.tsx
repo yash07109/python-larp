@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllDataStructuresDepth, getLesson as getDataStructuresDepthLesson } from "@/lib/content/data-structures-depth"
+import { getAllDataStructuresDepth, getLesson } from "@/lib/content/data-structures-depth"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -11,7 +11,7 @@ const sections = [
 ]
 
 export default function DataStructuresDepthLesson({ params }: { params: { slug: string } }) {
-  const lesson = getDataStructuresDepthLesson(params.slug)
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

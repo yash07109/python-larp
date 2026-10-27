@@ -28,13 +28,13 @@ export const FUNCTIONS_LESSONS: Lesson[] = [
     estimatedTime: "20 min",
     content: `
 ### Defining Functions
-Use the `def` keyword followed by the function name, parameters in parentheses, and a colon.
+Use the def keyword followed by the function name, parameters in parentheses, and a colon.
 
 ### Return Values
-Use `return` to send a value back to the caller. Without it, functions return `None`.
+Use return to send a value back to the caller. Without it, functions return None.
 
 ### Docstrings
-Document what your function does using triple-quoted strings immediately after the `def` line.
+Document what your function does using triple-quoted strings immediately after the def line.
 
 ### AI/ML Relevance
 Functions encapsulate model training, preprocessing, and inference logic cleanly.
@@ -51,7 +51,7 @@ print(greet("Alice"))
 print(greet("Bob"))`,
         output: `Hello, Alice!
 Hello, Bob`,
-        explanation: "The function takes `name` as a parameter and returns a formatted string.",
+        explanation: "The function takes name as a parameter and returns a formatted string.",
       },
       {
         id: "ex2",
@@ -84,10 +84,10 @@ Collects extra positional arguments into a tuple.
 Collects extra keyword arguments into a dictionary.
 
 ### Order Matters
-Positional args, then `*args`, then keyword-only, then `**kwargs`.
+Positional args, then *args, then keyword-only, then **kwargs.
 
 ### AI/ML Relevance
-Used in library APIs (e.g., `plt.plot()`, `model.fit()`) to accept flexible options.
+Used in library APIs (e.g., plt.plot(), model.fit()) to accept flexible options.
     `,
     examples: [
       {
@@ -103,7 +103,7 @@ print(sum_all(1, 2, 3))
 print(sum_all(10, 20, 30, 40, 50))`,
         output: `6
 150`,
-        explanation: "`*numbers` packs all passed arguments into a tuple.",
+        explanation: "*numbers packs all passed arguments into a tuple.",
       },
       {
         id: "ex2",
@@ -116,7 +116,7 @@ build_profile(name="Alice", age=25, city="NYC")`,
         output: `name: Alice
 age: 25
 city: NYC`,
-        explanation: "`**info` packs keyword arguments into a dictionary.",
+        explanation: "**info packs keyword arguments into a dictionary.",
       },
     ],
     aiMlRelevance: true,

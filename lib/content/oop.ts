@@ -22,17 +22,17 @@ export const OOP_LESSONS: Lesson[] = [
   {
     slug: "classes-objects",
     title: "Classes & Objects",
-    description: "Define blueprints with `class` and instantiate objects.",
+    description: "Define blueprints with class and instantiate objects.",
     order: 1,
     difficulty: "beginner",
     estimatedTime: "20 min",
     content: `
 ### Defining a Class
-Use `class` with `__init__` as the constructor and `self` to refer to the instance.
+Use class with __init__ as the constructor and self to refer to the instance.
 
 ### Instance vs Class Attributes
-- Instance: unique per object (`self.attr`)
-- Class: shared across all instances (`ClassName.attr`)
+- Instance: unique per object (self.attr)
+- Class: shared across all instances (ClassName.attr)
 
 ### AI/ML Relevance
 Classes model datasets, models, and pipelines in ML codebases.
@@ -60,7 +60,7 @@ print(dog1.species)`,
         output: `Buddy says woof!
 Max says woof!
 Canis familiaris`,
-        explanation: "`self` binds attributes to the specific instance.",
+        explanation: "self binds attributes to the specific instance.",
       },
     ],
     aiMlRelevance: true,
@@ -76,7 +76,7 @@ Canis familiaris`,
 ### Single Inheritance
 A child class inherits attributes and methods from a parent class.
 
-### `super()`
+### super()
 Call parent class methods from the child.
 
 ### MRO
@@ -105,7 +105,7 @@ for a in animals:
     print(a.speak())`,
         output: `Woof!
 Some sound`,
-        explanation: "Dog overrides `speak`, Cat inherits it unchanged.",
+        explanation: "Dog overrides speak, Cat inherits it unchanged.",
       },
     ],
     aiMlRelevance: true,
@@ -119,12 +119,12 @@ Some sound`,
     estimatedTime: "20 min",
     content: `
 ### Common Dunder Methods
-- `__str__` — readable string representation
-- `__repr__` — developer representation
-- `__len__` — length of object
-- `__getitem__` — indexing support
-- `__call__` — make object callable
-- `__enter__`/`__exit__` — context manager
+- __str__ — readable string representation
+- __repr__ — developer representation
+- __len__ — length of object
+- __getitem__ — indexing support
+- __call__ — make object callable
+- __enter__/__exit__ — context manager
 
 ### AI/ML Relevance
 Enables custom objects to behave like built-in types in data pipelines.
@@ -172,12 +172,12 @@ print(v[0], v[1])`,
     estimatedTime: "20 min",
     content: `
 ### Abstraction (ABC)
-`abc.ABC` and `@abstractmethod` force subclasses to implement required methods.
+abc.ABC and @abstractmethod force subclasses to implement required methods.
 
 ### Encapsulation
-- `_name` — convention for "protected"
-- `__name` — name mangling (harder to access from outside)
-- `@property` — controlled getter/setter
+- _name — convention for "protected"
+- __name — name mangling (harder to access from outside)
+- @property — controlled getter/setter
 
 ### AI/ML Relevance
 Abstract base classes define interfaces for models, ensuring consistent APIs.
@@ -204,7 +204,7 @@ class Rectangle(Shape):
 r = Rectangle(4, 5)
 print(r.area())`,
         output: `20`,
-        explanation: "Cannot instantiate `Shape` directly — must implement `area`.",
+        explanation: "Cannot instantiate Shape directly — must implement area.",
       },
     ],
     aiMlRelevance: true,

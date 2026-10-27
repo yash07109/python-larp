@@ -28,10 +28,10 @@ export const FUNCTIONAL_LESSONS: Lesson[] = [
     estimatedTime: "15 min",
     content: `
 ### Syntax
-\`lambda arguments: expression\`
+lambda arguments: expression
 
 ### Characteristics
-- No `def` or `return` keyword
+- No def or return keyword
 - Single expression only (implicitly returned)
 - Can be assigned to variables or passed directly
 
@@ -39,7 +39,7 @@ export const FUNCTIONAL_LESSONS: Lesson[] = [
 Short throwaway functions — callbacks, sorting keys, simple transformations.
 
 ### AI/ML Relevance
-Used with `map`, `filter`, and in scikit-learn/pandas for quick transformations.
+Used with map, filter, and in scikit-learn/pandas for quick transformations.
     `,
     examples: [
       {
@@ -66,13 +66,13 @@ print((lambda x, y: x + y)(3, 7))`,
     estimatedTime: "20 min",
     content: `
 ### map(func, iterable)
-Applies `func` to every item, returns an iterator.
+Applies func to every item, returns an iterator.
 
 ### filter(func, iterable)
-Keeps items where `func` returns True.
+Keeps items where func returns True.
 
-### reduce(func, iterable) — from `functools`
-Cumulatively applies `func` to reduce to a single value.
+### reduce(func, iterable) — from functools
+Cumulatively applies func to reduce to a single value.
 
 ### AI/ML Relevance
 Vectorized-style operations on data before converting to NumPy/pandas.
@@ -103,7 +103,7 @@ print(total)`,
   {
     slug: "partial-currying",
     title: "partial & Currying",
-    description: "Partial function application with `functools.partial`.",
+    description: "Partial function application with functools.partial.",
     order: 3,
     difficulty: "intermediate",
     estimatedTime: "20 min",

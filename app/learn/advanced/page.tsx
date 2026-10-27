@@ -1,9 +1,5 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { Target } from "lucide-react"
-import { getAllAdvanced, getLesson as getAdvancedLesson } from "@/lib/content/advanced"
-import { ModuleLayout } from "@/components/ModuleLayout"
-import { LessonPlayer } from "@/components/LessonPlayer"
 
 const sections = [
   { slug: "decorators", title: "Decorators", iconKey: "Target", color: "bg-orange-500/20 text-orange-400" },
@@ -11,6 +7,11 @@ const sections = [
   { slug: "context-managers", title: "Context Managers", iconKey: "Target", color: "bg-orange-500/20 text-orange-400" },
   { slug: "asyncio", title: "AsyncIO", iconKey: "Zap", color: "bg-cyan-500/20 text-cyan-400" },
 ]
+
+function getEmoji(key: string) {
+  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
+  return map[key] || "📘"
+}
 
 export default function AdvancedIndex() {
   return (
@@ -60,24 +61,5 @@ export default function AdvancedIndex() {
         </div>
       </main>
     </div>
-  )
-}
-
-function getEmoji(key: string) {
-  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
-  return map[key] || "📘"
-}
-
-export function AdvancedLesson({ params }: { params: { slug: string } }) {
-  const lesson = getAdvancedLesson(params.slug)
-
-  if (!lesson) {
-    notFound()
-  }
-
-  return (
-    <ModuleLayout sections={sections} moduleName="Advanced Python" modulePath="/learn/advanced">
-      <LessonPlayer lesson={lesson} modulePath="/learn/advanced" allLessons={getAllAdvanced()} />
-    </ModuleLayout>
   )
 }

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllFunctionsDepth, getLesson as getFunctionsDepthLesson } from "@/lib/content/functions-depth"
+import { getAllFunctionsDepth, getLesson } from "@/lib/content/functions-depth"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -10,7 +10,7 @@ const sections = [
 ]
 
 export default function FunctionsDepthLesson({ params }: { params: { slug: string } }) {
-  const lesson = getFunctionsDepthLesson(params.slug)
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllAIMLDS, getLesson as getAIMLDSLesson } from "@/lib/content/ai-ml-ds"
+import { getAllAIMLDS, getLesson } from "@/lib/content/ai-ml-ds"
 import { ModuleLayout } from "@/components/ModuleLayout"
 import { LessonPlayer } from "@/components/LessonPlayer"
 
@@ -10,8 +10,8 @@ const sections = [
   { slug: "scikit-learn-basics", title: "scikit-learn Basics", iconKey: "GraduationCap", color: "bg-violet-500/20 text-violet-400" },
 ]
 
-export default function AIMLDSLesson({ params }: { params: { slug: string } }) {
-  const lesson = getAIMLDSLesson(params.slug)
+export default function AiMlDsLesson({ params }: { params: { slug: string } }) {
+  const lesson = getLesson(params.slug)
 
   if (!lesson) {
     notFound()

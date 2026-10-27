@@ -28,7 +28,6 @@ export const ERROR_HANDLING_LESSONS: Lesson[] = [
     estimatedTime: "20 min",
     content: `
 ### Basic Syntax
-\`\`\`
 try:
     # code that might fail
 except SomeError:
@@ -37,12 +36,11 @@ else:
     # runs if no exception
 finally:
     # always runs (cleanup)
-\`\`\`
 
 ### Best Practices
-- Catch specific exceptions, not bare `except:`
+- Catch specific exceptions, not bare except:
 - Don't swallow errors silently
-- Use `finally` for resource cleanup
+- Use finally for resource cleanup
 
 ### AI/ML Relevance
 Handle missing data files, bad API responses, and model load failures in production.
@@ -61,7 +59,7 @@ finally:
     print("Cleanup done")`,
         output: `Cannot divide by zero!
 Cleanup done`,
-        explanation: "The `except` block catches the error; `finally` always runs.",
+        explanation: "The except block catches the error; finally always runs.",
       },
     ],
     aiMlRelevance: true,
@@ -75,7 +73,7 @@ Cleanup done`,
     estimatedTime: "15 min",
     content: `
 ### Creating Custom Exceptions
-Inherit from `Exception` (or a more specific built-in).
+Inherit from Exception (or a more specific built-in).
 
 ### When to Use
 - Invalid input in ML pipelines
@@ -117,13 +115,13 @@ except NegativeValueError as e:
     estimatedTime: "20 min",
     content: `
 ### Logging
-Use the `logging` module instead of `print()` for production code.
+Use the logging module instead of print() for production code.
 
 ### Levels
 DEBUG < INFO < WARNING < ERROR < CRITICAL
 
 ### Assertions
-`assert condition, "message"` — crashes with AssertionError if condition is False. Use for internal invariants.
+assert condition, "message" — crashes with AssertionError if condition is False. Use for internal invariants.
 
 ### AI/ML Relevance
 Logging tracks training runs; assertions validate data shapes and model invariants.

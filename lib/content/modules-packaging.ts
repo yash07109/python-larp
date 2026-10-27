@@ -22,19 +22,19 @@ export const MODULES_PACKAGING_LESSONS: Lesson[] = [
   {
     slug: "import-system",
     title: "Import System",
-    description: "How `import` works, `sys.path`, packages vs modules.",
+    description: "How import works, sys.path, packages vs modules.",
     order: 1,
     difficulty: "intermediate",
     estimatedTime: "20 min",
     content: `
-### `import` Mechanics
-Python searches `sys.path` for a matching `.py` file or package folder.
+### import Mechanics
+Python searches sys.path for a matching .py file or package folder.
 
-### `import module` vs `from module import name`
-- `import math` — binds `math`; access `math.sqrt`
-- `from math import sqrt` — binds `sqrt` directly
+### import module vs from module import name
+- import math — binds math; access math.sqrt
+- from math import sqrt — binds sqrt directly
 
-### `__name__ == "__main__"`
+### __name__ == "__main__"
 Lets a file act as both a reusable module and a runnable script.
 
 ### AI/ML Relevance
@@ -65,7 +65,7 @@ def main():
 if __name__ == "__main__":
     main()`,
         output: `Running as script`,
-        explanation: "`main()` only runs when executed directly, not when imported.",
+        explanation: "main() only runs when executed directly, not when imported.",
       },
     ],
     aiMlRelevance: true,
@@ -79,16 +79,16 @@ if __name__ == "__main__":
     estimatedTime: "20 min",
     content: `
 ### pip
-Python's package installer. `pip install package_name`.
+Python's package installer. pip install package_name.
 
 ### venv
 Isolates dependencies per project so they don't conflict.
 
 ### Workflow
-1. `python -m venv .venv`
-2. `source .venv/bin/activate` (or `.venv\\Scripts\\activate` on Windows)
-3. `pip install -r requirements.txt`
-4. `pip freeze > requirements.txt`
+1. python -m venv .venv
+2. source .venv/bin/activate (or .venv\Scripts\activate on Windows)
+3. pip install -r requirements.txt
+4. pip freeze > requirements.txt
 
 ### AI/ML Relevance
 ML libraries (PyTorch, TensorFlow) have heavy dependencies — virtual environments keep them isolated.
@@ -110,20 +110,20 @@ ML libraries (PyTorch, TensorFlow) have heavy dependencies — virtual environme
   },
   {
     slug: "packages",
-    title: "Packages & `__init__.py`",
-    description: "Organize modules into packages with `__init__.py`.",
+    title: "Packages & __init__.py",
+    description: "Organize modules into packages with __init__.py.",
     order: 3,
     difficulty: "intermediate",
     estimatedTime: "20 min",
     content: `
 ### Package Structure
-A folder with `__init__.py` is a package. You can import submodules from it.
+A folder with __init__.py is a package. You can import submodules from it.
 
-### `__init__.py`
+### __init__.py
 Can be empty, or re-export names to simplify imports.
 
 ### Relative Imports
-`from . import sibling` inside a package.
+from . import sibling inside a package.
 
 ### AI/ML Relevance
 Large ML projects organize models, data, and utils into packages.
@@ -144,7 +144,7 @@ from .models import train_model
 # Usage
 from myml import load_data, train_model`,
         output: `# Package exposes clean API`,
-        explanation: "`__init__` controls what's publicly importable.",
+        explanation: "__init__ controls what's publicly importable.",
       },
     ],
     aiMlRelevance: true,

@@ -1,9 +1,5 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { Code2 } from "lucide-react"
-import { getAllDataStructures, getLesson as getDataStructuresLesson } from "@/lib/content/data-structures"
-import { ModuleLayout } from "@/components/ModuleLayout"
-import { LessonPlayer } from "@/components/LessonPlayer"
 
 const sections = [
   { slug: "lists", title: "Lists", iconKey: "Code2", color: "bg-purple-500/20 text-purple-400" },
@@ -12,9 +8,12 @@ const sections = [
   { slug: "tuples", title: "Tuples", iconKey: "Code2", color: "bg-purple-500/20 text-purple-400" },
 ]
 
-export default function DataStructuresIndex() {
-  const lessons = getAllDataStructures()
+function getEmoji(key: string) {
+  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
+  return map[key] || "📘"
+}
 
+export default function DataStructuresIndex() {
   return (
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 w-full z-50 border-b border-border/50 bg-background/60 backdrop-blur-xl">
@@ -37,53 +36,30 @@ export default function DataStructuresIndex() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Data <span className="gradient-text-dark">Structures</span>
+              Data Structures
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Lists, dictionaries, sets, tuples, and more — organize data efficiently for AI & ML.
+              Learn Data Structures with interactive examples and exercises.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {lessons.map((lesson) => {
-              const section = sections.find((s) => s.slug === lesson.slug)
-              return (
-                <Link
-                  key={lesson.slug}
-                  href={`/learn/data-structures/${lesson.slug}`}
-                  className="group relative p-6 rounded-3xl border border-border bg-card/80 backdrop-blur hover:border-indigo-500/30 hover:bg-card hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
-                >
-                  <div className="w-13 h-13 rounded-2xl flex items-center justify-center mb-4 {section?.color} group-hover:scale-110 transition-transform">
-                    <span className="text-lg">{getEmoji(section?.iconKey || "Code2")}</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 group-hover:text-foreground transition-colors">{lesson.title}</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">{lesson.description}</p>
-                  <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none" />
-                </Link>
-              )
-            })}
+            {sections.map((section) => (
+              <Link
+                key={section.slug}
+                href={`/learn/data-structures/` + section.slug}
+                className="group relative p-6 rounded-3xl border border-border bg-card/80 backdrop-blur hover:border-indigo-500/30 hover:bg-card hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
+              >
+                <div className="w-13 h-13 rounded-2xl flex items-center justify-center mb-4 {section.color} group-hover:scale-110 transition-transform">
+                  <span className="text-lg">{getEmoji(section.iconKey)}</span>
+                </div>
+                <h3 className="text-lg font-bold mb-2 group-hover:text-foreground transition-colors">{section.title}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none" />
+              </Link>
+            ))}
           </div>
         </div>
       </main>
     </div>
-  )
-}
-
-function getEmoji(key: string) {
-  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
-  return map[key] || "📘"
-}
-
-export function DataStructuresLesson({ params }: { params: { slug: string } }) {
-  const lesson = getDataStructuresLesson(params.slug)
-
-  if (!lesson) {
-    notFound()
-  }
-
-  return (
-    <ModuleLayout sections={sections} moduleName="Data Structures" modulePath="/learn/data-structures">
-      <LessonPlayer lesson={lesson} modulePath="/learn/data-structures" allLessons={getAllDataStructures()} />
-    </ModuleLayout>
   )
 }

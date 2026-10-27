@@ -1,15 +1,16 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { Zap } from "lucide-react"
-import { getAllErrorHandling, getLesson as getErrorHandlingLesson } from "@/lib/content/error-handling"
-import { ModuleLayout } from "@/components/ModuleLayout"
-import { LessonPlayer } from "@/components/LessonPlayer"
 
 const sections = [
   { slug: "try-except", title: "Try / Except / Finally", iconKey: "Zap", color: "bg-amber-500/20 text-amber-400" },
   { slug: "custom-exceptions", title: "Custom Exceptions", iconKey: "Zap", color: "bg-amber-500/20 text-amber-400" },
   { slug: "logging-assertions", title: "Logging & Assertions", iconKey: "Zap", color: "bg-amber-500/20 text-amber-400" },
 ]
+
+function getEmoji(key: string) {
+  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
+  return map[key] || "📘"
+}
 
 export default function ErrorHandlingIndex() {
   return (
@@ -34,10 +35,10 @@ export default function ErrorHandlingIndex() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Error <span className="gradient-text-dark">Handling</span>
+              Error Handling
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              try/except, custom exceptions, logging, and assertions — write robust, production-ready Python.
+              Learn Error Handling with interactive examples and exercises.
             </p>
           </div>
 
@@ -45,7 +46,7 @@ export default function ErrorHandlingIndex() {
             {sections.map((section) => (
               <Link
                 key={section.slug}
-                href={`/learn/error-handling/${section.slug}`}
+                href={`/learn/error-handling/` + section.slug}
                 className="group relative p-6 rounded-3xl border border-border bg-card/80 backdrop-blur hover:border-indigo-500/30 hover:bg-card hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300"
               >
                 <div className="w-13 h-13 rounded-2xl flex items-center justify-center mb-4 {section.color} group-hover:scale-110 transition-transform">
@@ -59,24 +60,5 @@ export default function ErrorHandlingIndex() {
         </div>
       </main>
     </div>
-  )
-}
-
-function getEmoji(key: string) {
-  const map: Record<string, string> = { Play: "🐍", Code2: "⚡", Zap: "🔥", MousePointer: "🎯", Target: "🎯", GraduationCap: "🎓" }
-  return map[key] || "📘"
-}
-
-export function ErrorHandlingLesson({ params }: { params: { slug: string } }) {
-  const lesson = getErrorHandlingLesson(params.slug)
-
-  if (!lesson) {
-    notFound()
-  }
-
-  return (
-    <ModuleLayout sections={sections} moduleName="Error Handling" modulePath="/learn/error-handling">
-      <LessonPlayer lesson={lesson} modulePath="/learn/error-handling" allLessons={getAllErrorHandling()} />
-    </ModuleLayout>
   )
 }

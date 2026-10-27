@@ -45,7 +45,7 @@ Almost every modern AI/ML library is built with or exposes a Python API. Learnin
         code: `# This is a comment
 print("Hello, Python Mastery!")`,
         output: `Hello, Python Mastery!`,
-        explanation: "The `print()` function displays output to the console. Lines starting with # are comments and are ignored by Python.",
+        explanation: "The print() function displays output to the console. Lines starting with # are comments and are ignored by Python.",
       },
     ],
     aiMlRelevance: true,
@@ -62,13 +62,11 @@ print("Hello, Python Mastery!")`,
 Variables are containers for storing data values. Python has no command for declaring a variable — you create one the moment you assign a value to it.
 
 ### Core Data Types
-| Type | Example | Description |
-|------|---------|-------------|
-| `int` | `5`, `-3` | Whole numbers |
-| `float` | `3.14`, `2.0` | Decimal numbers |
-| `str` | `"hello"` | Text |
-| `bool` | `True`, `False` | Boolean values |
-| `NoneType` | `None` | Represents no value |
+| int | 5, -3 | Whole numbers |
+| float | 3.14, 2.0 | Decimal numbers |
+| str | "hello" | Text |
+| bool | True, False | Boolean values |
+| NoneType | None | Represents no value |
 
 ### Dynamic Typing
 Python is dynamically typed — you don't need to declare the type, and a variable can change type during execution.
@@ -96,7 +94,7 @@ print(age, price, name, is_student, result)
 print(type(age), type(price), type(name), type(is_student), type(result))`,
         output: `25 19.99 Alice True None
 <class 'int'> <class 'float'> <class 'str'> <class 'bool'> <class 'NoneType'>`,
-        explanation: "Use `type()` to check a variable's data type. Python infers types automatically from the assigned value.",
+        explanation: "Use type() to check a variable's data type. Python infers types automatically from the assigned value.",
       },
       {
         id: "ex2",
@@ -122,23 +120,23 @@ ten <class 'str'>`,
     estimatedTime: "15 min",
     content: `
 ### Arithmetic Operators
-`+` `-` `*` `/` `//` `%` `**`
++ - * / // % **
 
 ### Comparison Operators
-`==` `!=` `>` `<` `>=` `<=`
+== != > < >= <=
 
 ### Logical Operators
-`and` `or` `not`
+and or not
 
 ### Assignment Operators
-`=` `+=` `-=` `*=` `/=` `//=` `%=` `**=`
+= += -= *= /= //= %= **=
 
 ### Operator Precedence
-1. `**` (exponentiation)
-2. `*` `/` `//` `%`
-3. `+` `-`
+1. ** (exponentiation)
+2. * / // %
+3. + -
 4. Comparisons
-5. `not`, `and`, `or`
+5. not, and, or
     `,
     examples: [
       {
@@ -161,7 +159,7 @@ print(a ** b)  # 1000`,
 3
 1
 1000`,
-        explanation: "`/` always returns a float. `//` returns the floor (integer part). `%` returns the remainder.",
+        explanation: "/ always returns a float. // returns the floor (integer part). % returns the remainder.",
       },
       {
         id: "ex2",
@@ -175,7 +173,7 @@ print(not has_id)             # False`,
         output: `True
 True
 False`,
-        explanation: "`and` requires both to be True. `or` needs at least one True. `not` flips the value.",
+        explanation: "and requires both to be True. or needs at least one True. not flips the value.",
       },
     ],
     aiMlRelevance: true,
@@ -192,13 +190,13 @@ False`,
 Use single, double, or triple quotes. Triple quotes allow multi-line strings.
 
 ### String Methods
-- `.upper()`, `.lower()`, `.strip()`, `.replace()`, `.split()`, `.join()`, `.find()`
+- .upper(), .lower(), .strip(), .replace(), .split(), .join(), .find()
 
 ### String Slicing
-`text[start:stop:step]` — extracts a substring.
+text[start:stop:step] — extracts a substring.
 
 ### f-Strings (Formatted String Literals)
-Embed expressions inside string literals using `f"..."`.
+Embed expressions inside string literals using f"...".
 
 ### AI/ML Relevance
 Text data is everywhere — from cleaning dataset column names to processing natural language.
@@ -221,7 +219,7 @@ print(text[::-1])             # "  yrasreM nohtyP  "`,
 ['Python', 'Mastery']
 thon  
   yrasreM nohtyP  `,
-        explanation: "Slicing `[start:stop]` extracts characters. `[::-1]` reverses the string.",
+        explanation: "Slicing [start:stop] extracts characters. [::-1] reverses the string.",
       },
       {
         id: "ex2",
@@ -250,16 +248,16 @@ Double score: 190`,
     estimatedTime: "10 min",
     content: `
 ### input()
-Reads a line from the user. Always returns a string — convert with `int()`, `float()` when needed.
+Reads a line from the user. Always returns a string — convert with int(), float() when needed.
 
 ### print()
-Displays output. Supports multiple arguments, `sep`, and `end` parameters.
+Displays output. Supports multiple arguments, sep, and end parameters.
 
 ### Type Conversion
-- `int("5")` → 5
-- `float("3.14")` → 3.14
-- `str(100)` → "100"
-- `bool(1)` → True
+- int("5") → 5
+- float("3.14") → 3.14
+- str(100) → "100"
+- bool(1) → True
     `,
     examples: [
       {
@@ -277,7 +275,7 @@ print("Loading", end="... ")`,
         output: `Hello Alice! Next year you will be 26.
 Apple, Banana, Cherry
 Loading... `,
-        explanation: "`input()` always returns a string. Wrap it with `int()` or `float()` for numbers.",
+        explanation: "input() always returns a string. Wrap it with int() or float() for numbers.",
       },
     ],
     aiMlRelevance: false,
@@ -291,13 +289,13 @@ Loading... `,
     estimatedTime: "10 min",
     content: `
 ### Comments
-Start with `#`. Used for explanations and temporarily disabling code.
+Start with #. Used for explanations and temporarily disabling code.
 
 ### Docstrings
-Triple-quoted strings placed immediately after a function, class, or module definition. Used to document what code does. Accessible via `__doc__`.
+Triple-quoted strings placed immediately after a function, class, or module definition. Used to document what code does. Accessible via __doc__.
 
 ### Best Practices
-- Comment the "why", not the "what"
+- Comment the why, not the what
 - Keep docstrings concise but complete
 - Update comments when code changes
     `,
@@ -331,7 +329,7 @@ Calculate the area of a circle given its radius.
     Returns:
         float: The area of the circle.
 `,
-        explanation: "Docstrings are accessible at runtime via `__doc__` and are used by tools like `help()` and IDEs.",
+        explanation: "Docstrings are accessible at runtime via __doc__ and are used by tools like help() and IDEs.",
       },
     ],
     aiMlRelevance: false,

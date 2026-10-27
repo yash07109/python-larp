@@ -28,11 +28,11 @@ export const COMPREHENSIONS_LESSONS: Lesson[] = [
     estimatedTime: "15 min",
     content: `
 ### Basic Syntax
-[\`expression\` for \`item\` in \`iterable\` if \`condition\`]
+[expression for item in iterable if condition]
 
 ### Why Use Them
-- More concise than `for` loops
-- Often faster than equivalent `append()` loops
+- More concise than for loops
+- Often faster than equivalent append() loops
 - Readable when kept simple
 
 ### AI/ML Relevance
@@ -53,7 +53,7 @@ print(squares)`,
         code: `evens = [x for x in range(20) if x % 2 == 0]
 print(evens)`,
         output: `[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]`,
-        explanation: "Filter items using an `if` clause at the end.",
+        explanation: "Filter items using an if clause at the end.",
       },
       {
         id: "ex3",
@@ -75,7 +75,7 @@ print(pairs)`,
     estimatedTime: "15 min",
     content: `
 ### Syntax
-{`key_expr`: `value_expr` for `item` in `iterable` if `condition`}
+{key_expr: value_expr for item in iterable if condition}
 
 ### Use Cases
 - Inverting key-value pairs
@@ -116,7 +116,7 @@ print(expensive)`,
     estimatedTime: "10 min",
     content: `
 ### Syntax
-{`expression` for `item` in `iterable` if `condition`}
+{expression for item in iterable if condition}
 
 ### Key Difference
 Like list comprehensions but uses curly braces and guarantees uniqueness.
@@ -146,11 +146,11 @@ print(sorted(lengths))`,
     estimatedTime: "15 min",
     content: `
 ### Syntax
-(`expression` for `item` in `iterable` if `condition`)
+(expression for item in iterable if condition)
 
 ### List vs Generator
-- List comprehension `[...]` — builds entire list in memory
-- Generator expression `(...)` — yields one item at a time
+- List comprehension [...] — builds entire list in memory
+- Generator expression (...) — yields one item at a time
 
 ### When to Use
 Large datasets where you can't fit everything in memory at once.
