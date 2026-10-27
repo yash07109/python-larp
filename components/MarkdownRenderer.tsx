@@ -106,11 +106,11 @@ export function MarkdownRenderer({ children, className }: { children: string; cl
     i++
   }
 
-  return <div className={`prose-sm max-w-none ${className || ""}`}>{blocks}</div>
+  return <div className={className || ""}>{blocks}</div>
 }
 
 function inline(text: string): React.ReactNode {
-  const parts = text.split(/\*\*(.+?)\*\*/)
+  let parts = text.split(/\*\*(.+?)\*\*/)
   if (parts.length > 1) {
     return parts.map((p, idx) => (idx % 2 === 1 ? <strong key={idx}>{inlineSimple(p)}</strong> : inlineSimple(p)))
   }
