@@ -22,30 +22,57 @@ export const FUNDAMENTALS_LESSONS: Lesson[] = [
   {
     slug: "introduction-setup",
     title: "Introduction & Setup",
-    description: "What is Python, why learn it, and how to set up your environment.",
+    description: "What Python is, why it dominates AI/ML, and how to run your first program.",
     order: 1,
     difficulty: "beginner",
-    estimatedTime: "10 min",
-    content: `
-Python is a high-level, interpreted, general-purpose programming language known for its readability and simplicity. It is the most popular language for AI, Machine Learning, and Data Science.
+    estimatedTime: "15 min",
+    content: `# What is Python?
 
-### Why Python?
-- Easy to read and write (syntax close to English)
-- Massive ecosystem of libraries (NumPy, pandas, PyTorch, TensorFlow)
-- Interpreted — no compilation step needed
-- Cross-platform (Windows, macOS, Linux)
+Python is a high-level, interpreted, general-purpose programming language. Created by Guido van Rossum and released in 1991, Python emphasizes **readability** — its syntax uses significant whitespace and reads almost like English.
 
-### AI/ML Relevance
-Almost every modern AI/ML library is built with or exposes a Python API. Learning Python well is the single most important step before touching data science.
+## Why Python?
+
+- **Easy to learn** — clean, minimal syntax
+- **Interpreted** — no compilation step; run code line-by-line
+- **Dynamically typed** — variable types are inferred at runtime
+- **Massive ecosystem** — libraries for everything from web development to artificial intelligence
+
+## Python & AI / Machine Learning
+
+Python is the **most popular language for AI, ML, and Data Science**. Almost every major library — NumPy, pandas, PyTorch, TensorFlow, scikit-learn — has a Python API. If your goal is AI/ML, Python is the best place to start.
+
+## Running Python
+
+There are two common ways to run Python:
+
+1. **Interactive shell (REPL)** — type `python` or `python3` in your terminal and enter code line-by-line
+2. **Script files** — save code in a `.py` file and run it with `python filename.py`
+
+> 💡 This website includes a live browser playground, so you can run Python examples instantly without installing anything.
+
+> ℹ️ "Interpreted" means Python executes code directly without needing a separate compiler like C++ or Java.
     `,
     examples: [
       {
         id: "ex1",
         title: "Your First Python Program",
-        code: `# This is a comment
+        code: `# This is a comment — Python ignores lines starting with #
 print("Hello, Python Mastery!")`,
         output: `Hello, Python Mastery!`,
-        explanation: "The print() function displays output to the console. Lines starting with # are comments and are ignored by Python.",
+        explanation: "`print()` displays output to the console. The text inside quotes is a string literal.",
+      },
+      {
+        id: "ex2",
+        title: "Arithmetic in REPL style",
+        code: `print(2 + 3)
+print(10 - 4)
+print(6 * 7)
+print(8 / 2)`,
+        output: `5
+6
+42
+4.0`,
+        explanation: "Python handles basic math natively. Notice `/` always returns a float (4.0, not 4).",
       },
     ],
     aiMlRelevance: true,
@@ -56,20 +83,39 @@ print("Hello, Python Mastery!")`,
     description: "Store data in variables and understand Python's core data types.",
     order: 2,
     difficulty: "beginner",
-    estimatedTime: "15 min",
-    content: `
-### Variables
-Variables are containers for storing data values. Python has no command for declaring a variable — you create one the moment you assign a value to it.
+    estimatedTime: "20 min",
+    content: `# Variables
 
-### Core Data Types
-| int | 5, -3 | Whole numbers |
-| float | 3.14, 2.0 | Decimal numbers |
-| str | "hello" | Text |
-| bool | True, False | Boolean values |
-| NoneType | None | Represents no value |
+A **variable** is a named container that holds a value. In Python, you create a variable simply by assigning a value to it — there is no `var`, `let`, or type declaration.
 
-### Dynamic Typing
-Python is dynamically typed — you don't need to declare the type, and a variable can change type during execution.
+```python
+name = "Alice"
+age = 25
+```
+
+Python infers the type automatically. This is called **dynamic typing**.
+
+## Core Data Types
+
+| Type | Example | Description |
+|------|---------|-------------|
+| `int` | `5`, `-3`, `1000` | Whole numbers |
+| `float` | `3.14`, `2.0`, `-0.5` | Decimal numbers |
+| `str` | `"hello"`, `'Python'` | Text |
+| `bool` | `True`, `False` | Boolean values |
+| `NoneType` | `None` | Represents absence of value |
+
+Use the `type()` function to check a variable's type at runtime.
+
+## Dynamic Typing
+
+A Python variable can change types during program execution:
+
+> ⚠️ This flexibility is convenient but can lead to bugs if you're not careful about what a variable holds.
+
+## AI/ML Relevance
+
+In data science, you'll constantly assign arrays, dataframes, and model objects to variables. Understanding how Python references these objects is essential.
     `,
     examples: [
       {
@@ -94,18 +140,22 @@ print(age, price, name, is_student, result)
 print(type(age), type(price), type(name), type(is_student), type(result))`,
         output: `25 19.99 Alice True None
 <class 'int'> <class 'float'> <class 'str'> <class 'bool'> <class 'NoneType'>`,
-        explanation: "Use type() to check a variable's data type. Python infers types automatically from the assigned value.",
+        explanation: "`type()` reveals the data type. Python infers types automatically from the assigned value.",
       },
       {
         id: "ex2",
-        title: "Dynamic Typing",
+        title: "Dynamic Typing in Action",
         code: `x = 10       # x is an int
 print(x, type(x))
 
 x = "ten"    # x is now a str
+print(x, type(x))
+
+x = 3.14     # x is now a float
 print(x, type(x))`,
         output: `10 <class 'int'>
-ten <class 'str'>`,
+ten <class 'str'>
+3.14 <class 'float'>`,
         explanation: "A variable can be reassigned to a different type at any time.",
       },
     ],
@@ -117,26 +167,48 @@ ten <class 'str'>`,
     description: "Arithmetic, comparison, logical, and assignment operators.",
     order: 3,
     difficulty: "beginner",
-    estimatedTime: "15 min",
-    content: `
-### Arithmetic Operators
-+ - * / // % **
+    estimatedTime: "20 min",
+    content: `# Operators
 
-### Comparison Operators
-== != > < >= <=
+Operators perform operations on variables and values. Python groups them into several categories.
 
-### Logical Operators
-and or not
+## Arithmetic Operators
 
-### Assignment Operators
-= += -= *= /= //= %= **=
+| Operator | Meaning | Example | Result |
+|----------|---------|---------|--------|
+| `+` | Addition | `5 + 3` | `8` |
+| `-` | Subtraction | `5 - 3` | `2` |
+| `*` | Multiplication | `5 * 3` | `15` |
+| `/` | Division | `5 / 3` | `1.666...` |
+| `//` | Floor division | `5 // 3` | `1` |
+| `%` | Modulus (remainder) | `5 % 3` | `2` |
+| `**` | Exponentiation | `5 ** 3` | `125` |
 
-### Operator Precedence
-1. ** (exponentiation)
-2. * / // %
-3. + -
-4. Comparisons
-5. not, and, or
+## Comparison Operators
+
+These return `True` or `False`:
+`==`, `!=`, `>`, `<`, `>=`, `<=`
+
+## Logical Operators
+
+- `and` — True if both operands are True
+- `or` — True if at least one operand is True
+- `not` — flips True to False and vice versa
+
+## Assignment Operators
+
+`=`, `+=`, `-=`, `*=`, `/=`, `//=`, `%=`, `**=`
+
+> ℹ️ Floor division `//` returns the largest integer less than or equal to the result. Modulus `%` returns the remainder.
+
+## Operator Precedence
+
+Python evaluates expressions in this order:
+1. `**` (exponentiation)
+2. `*`, `/`, `//`, `%`
+3. `+`, `-`
+4. Comparisons (`==`, `>`, etc.)
+5. `not`, `and`, `or`
     `,
     examples: [
       {
@@ -159,7 +231,7 @@ print(a ** b)  # 1000`,
 3
 1
 1000`,
-        explanation: "/ always returns a float. // returns the floor (integer part). % returns the remainder.",
+        explanation: "`/` always returns a float. `//` discards the remainder. `%` gives the remainder only.",
       },
       {
         id: "ex2",
@@ -173,7 +245,7 @@ print(not has_id)             # False`,
         output: `True
 True
 False`,
-        explanation: "and requires both to be True. or needs at least one True. not flips the value.",
+        explanation: "`and` needs both True. `or` needs at least one True. `not` inverts the value.",
       },
     ],
     aiMlRelevance: true,
@@ -184,22 +256,55 @@ False`,
     description: "Work with text using string methods, formatting, and slicing.",
     order: 4,
     difficulty: "beginner",
-    estimatedTime: "20 min",
-    content: `
-### Creating Strings
-Use single, double, or triple quotes. Triple quotes allow multi-line strings.
+    estimatedTime: "25 min",
+    content: `# Strings
 
-### String Methods
-- .upper(), .lower(), .strip(), .replace(), .split(), .join(), .find()
+A **string** is a sequence of characters. In Python, strings are created using single quotes `'`, double quotes `"`, or triple quotes `"""`.
 
-### String Slicing
-text[start:stop:step] — extracts a substring.
+## Creating Strings
 
-### f-Strings (Formatted String Literals)
-Embed expressions inside string literals using f"...".
+```python
+single = 'Hello'
+double = "World"
+multi = """This is a
+multi-line string"""
+```
 
-### AI/ML Relevance
-Text data is everywhere — from cleaning dataset column names to processing natural language.
+## String Slicing
+
+You can extract parts of a string using `text[start:stop:step]`.
+
+- `text[0]` — first character
+- `text[1:4]` — characters from index 1 up to (but not including) 4
+- `text[::-1]` — reverse the string
+
+## Common String Methods
+
+| Method | Purpose |
+|--------|---------|
+| `.upper()` | Convert to uppercase |
+| `.lower()` | Convert to lowercase |
+| `.strip()` | Remove leading/trailing whitespace |
+| `.replace(old, new)` | Replace substring |
+| `.split()` | Split into a list |
+| `.join(list)` | Join list into string |
+| `.find(sub)` | Find index of substring |
+
+## f-Strings (Formatted String Literals)
+
+Introduced in Python 3.6, f-strings let you embed expressions directly inside strings:
+
+```python
+name = "Alice"
+score = 95
+print(f"{name} scored {score} points.")
+```
+
+> 💡 f-strings are the modern, preferred way to format strings in Python.
+
+## AI/ML Relevance
+
+Text data is everywhere — from cleaning dataset column names to processing natural language (NLP). String manipulation is a foundational skill for data preprocessing.
     `,
     examples: [
       {
@@ -207,19 +312,19 @@ Text data is everywhere — from cleaning dataset column names to processing nat
         title: "String Methods & Slicing",
         code: `text = "  Python Mastery  "
 
-print(text.strip())           # "Python Mastery"
-print(text.upper())           # "  PYTHON MASTERY  "
-print(text.replace("Python", "AI"))  # "  AI Mastery  "
-print(text.split())           # ['Python', 'Mastery']
-print(text[2:8])              # "thon "
-print(text[::-1])             # "  yrasreM nohtyP  "`,
+print(text.strip())           # Remove whitespace
+print(text.upper())           # Uppercase
+print(text.replace("Python", "AI"))  # Replace word
+print(text.split())           # Split into list
+print(text[2:8])              # Slice characters
+print(text[::-1])             # Reverse string`,
         output: `Python Mastery
   PYTHON MASTERY  
   AI Mastery  
 ['Python', 'Mastery']
 thon  
   yrasreM nohtyP  `,
-        explanation: "Slicing [start:stop] extracts characters. [::-1] reverses the string.",
+        explanation: "Slicing `[start:stop]` extracts characters. `[::-1]` reverses the string.",
       },
       {
         id: "ex2",
@@ -234,7 +339,7 @@ print(message)
 print(f"Double score: {score * 2}")`,
         output: `Alice scored 95 out of 100.
 Double score: 190`,
-        explanation: "f-strings are the modern, readable way to format strings in Python 3.6+.",
+        explanation: "f-strings evaluate expressions inside `{}` and embed the result in the string.",
       },
     ],
     aiMlRelevance: true,
@@ -245,19 +350,31 @@ Double score: 190`,
     description: "Get user input with input() and format output with print().",
     order: 5,
     difficulty: "beginner",
-    estimatedTime: "10 min",
-    content: `
-### input()
-Reads a line from the user. Always returns a string — convert with int(), float() when needed.
+    estimatedTime: "15 min",
+    content: `# Input & Output
 
-### print()
-Displays output. Supports multiple arguments, sep, and end parameters.
+## input()
 
-### Type Conversion
-- int("5") → 5
-- float("3.14") → 3.14
-- str(100) → "100"
-- bool(1) → True
+The `input()` function reads a line of text from the user. **It always returns a string**, even if the user types a number. Convert it with `int()` or `float()` when needed.
+
+## print()
+
+The `print()` function displays output. It accepts multiple arguments and supports `sep` (separator) and `end` (what to print at the end) parameters.
+
+## Type Conversion Functions
+
+| Function | Purpose |
+|----------|---------|
+| `int()` | Convert to integer |
+| `float()` | Convert to float |
+| `str()` | Convert to string |
+| `bool()` | Convert to boolean |
+
+> ⚠️ Forgetting to convert `input()` to a number is a common beginner bug.
+
+## AI/ML Relevance
+
+While real data science rarely uses `input()` (data comes from files/databases), understanding type conversion is critical when cleaning messy datasets.
     `,
     examples: [
       {
@@ -275,7 +392,7 @@ print("Loading", end="... ")`,
         output: `Hello Alice! Next year you will be 26.
 Apple, Banana, Cherry
 Loading... `,
-        explanation: "input() always returns a string. Wrap it with int() or float() for numbers.",
+        explanation: "`input()` always returns a string. Wrap it with `int()` or `float()` for math.",
       },
     ],
     aiMlRelevance: false,
@@ -286,18 +403,46 @@ Loading... `,
     description: "Write clean, documented code with comments and docstrings.",
     order: 6,
     difficulty: "beginner",
-    estimatedTime: "10 min",
-    content: `
-### Comments
-Start with #. Used for explanations and temporarily disabling code.
+    estimatedTime: "15 min",
+    content: `# Comments & Docstrings
 
-### Docstrings
-Triple-quoted strings placed immediately after a function, class, or module definition. Used to document what code does. Accessible via __doc__.
+Good code explains itself, but comments and docstrings explain the **why** behind decisions.
 
-### Best Practices
-- Comment the why, not the what
+## Comments
+
+Start a line with `#`. Python ignores everything after `#` on that line.
+
+```python
+# Calculate the area of a circle
+area = 3.14159 * radius ** 2
+```
+
+## Docstrings
+
+Docstrings are triple-quoted strings placed immediately after a function, class, or module definition. They document what the code does and are accessible at runtime via `__doc__`.
+
+```python
+def circle_area(radius):
+    """Calculate the area of a circle given its radius.
+    
+    Args:
+        radius (float): The radius of the circle.
+    
+    Returns:
+        float: The area of the circle.
+    """
+    return 3.14159 * radius ** 2
+```
+
+## Best Practices
+
+- Comment the **why**, not the **what**
 - Keep docstrings concise but complete
 - Update comments when code changes
+
+## AI/ML Relevance
+
+Well-documented preprocessing and model code makes collaboration and reproducibility much easier in data science teams.
     `,
     examples: [
       {
@@ -329,7 +474,7 @@ Calculate the area of a circle given its radius.
     Returns:
         float: The area of the circle.
 `,
-        explanation: "Docstrings are accessible at runtime via __doc__ and are used by tools like help() and IDEs.",
+        explanation: "Docstrings are accessible at runtime via `__doc__` and are used by tools like `help()` and IDEs.",
       },
     ],
     aiMlRelevance: false,

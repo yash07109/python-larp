@@ -2,29 +2,30 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { ArrowLeft, CheckCircle2, Clock, Target, FileText } from "lucide-react"
+import { ArrowLeft, CheckCircle2, Clock, Target, Quiz, FileText, Copy, Play } from "lucide.react"
 import { cn } from "@/lib/utils"
 import { useProgress } from "./useProgress"
+import { MarkdownRenderer } from "./MarkdownRenderer"
 
 export type Lesson = {
-  slug: string;
-  title: string;
-  description: string;
-  order: number;
-  difficulty: "beginner" | "intermediate" | "advanced";
-  estimatedTime: string;
-  content: string;
-  examples: CodeExample[];
-  aiMlRelevance?: boolean;
-};
+  slug: string
+  title: string
+  description: string
+  order: number
+  difficulty: "beginner" | "intermediate" | "advanced"
+  estimatedTime: string
+  content: string
+  examples: CodeExample[]
+  aiMlRelevance?: boolean
+}
 
 export type CodeExample = {
-  id: string;
-  title: string;
-  code: string;
-  output?: string;
-  explanation: string;
-};
+  id: string
+  title: string
+  code: string
+  output?: string
+  explanation: string
+}
 
 interface LessonPlayerProps {
   lesson: Lesson
@@ -40,15 +41,7 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
     setCompleted(isComplete(lesson.slug))
   }, [isComplete, lesson.slug])
 
-  const lessons = allLessons || [
-    { slug: "introduction-setup", title: "Introduction & Setup" },
-    { slug: "variables-data-types", title: "Variables & Data Types" },
-    { slug: "operators", title: "Operators" },
-    { slug: "strings", title: "Strings" },
-    { slug: "input-output", title: "Input & Output" },
-    { slug: "comments-docstrings", title: "Comments & Docstrings" },
-  ]
-
+  const lessons = allLessons || []
   const currentIndex = lessons.findIndex((l) => l.slug === lesson.slug)
   const nextLesson = lessons[currentIndex + 1]
 
@@ -60,10 +53,10 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
   const quizPath = `/quiz/${modulePath.replace("/learn/", "")}`
   const notesPath = `/notes/${lesson.slug}`
 
-  const difficultyColors: Record<string, string> = {
-    beginner: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-    intermediate: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-    advanced: "bg-rose-500/10 text-rose-400 border-rose-500/20",
+  const difficultyBadge: Record<string, string> = {
+    beginner: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20",
+    intermediate: "bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/20",
+    advanced: "bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-500/20",
   }
 
   return (
@@ -78,13 +71,13 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
         <div className="flex items-center gap-2">
           <Link
             href={quizPath}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card/50 text-sm font-medium hover:bg-accent hover:border-indigo-500/30 transition-colors"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card text-sm font-medium hover:bg-accent hover:border-indigo-500/30 transition-colors"
           >
-            Quiz
+            <Quiz className="w-4 h-4" /> Quiz
           </Link>
           <Link
             href={notesPath}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card/50 text-sm font-medium hover:bg-accent hover:border-indigo-500/30 transition-colors"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border bg-card text-sm font-medium hover:bg-accent hover:border-indigo-500/30 transition-colors"
           >
             <FileText className="w-4 h-4" /> Notes
           </Link>
@@ -92,10 +85,10 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
             onClick={handleMarkComplete}
             disabled={completed}
             className={cn(
-              "inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all shadow-lg",
+              "inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all shadow-sm",
               completed
-                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-emerald-500/20"
-                : "bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5 disabled:opacity-60"
+                ? "bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 dark:border-emerald-500/20"
+                : "bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-sm hover:shadow-indigo-500/25 hover:-translate-y-0.5 disabled:opacity-60"
             )}
           >
             {completed ? <CheckCircle2 className="w-4 h-4" /> : <Clock className="w-4 h-4" />}
@@ -108,41 +101,43 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
         <main className="lg:col-span-8 space-y-10">
           <header className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className={cn("px-2.5 py-1 rounded-xl text-xs font-bold border", difficultyColors[lesson.difficulty])}>
+              <span className={cn("px-2.5 py-1 rounded-xl text-xs font-bold border", difficultyBadge[lesson.difficulty])}>
                 {lesson.difficulty}
               </span>
               <span className="text-xs text-muted-foreground flex items-center gap-1">
-                <Clock className="w-3 h-3" /> {lesson.estimatedTime}
+                <Play className="w-3 h-3" /> {lesson.estimatedTime}
               </span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">{lesson.title}</h1>
             <p className="text-lg text-muted-foreground">{lesson.description}</p>
           </header>
 
-          <div className="prose prose-invert lg:prose-xl max-w-none text-muted-foreground leading-relaxed">
-            {lesson.content.split("\n\n").map((para, i) => {
-              if (para.trim().startsWith("|")) {
-                return <div key={i} className="overflow-x-auto mb-6">{para}</div>
-              }
-              return <p key={i} className="mb-6">{para}</p>
-            })}
-          </div>
+          <MarkdownRenderer children={lesson.content} />
 
           <div className="space-y-6">
             <h2 className="text-xl font-bold text-foreground border-b border-border/50 pb-3">Examples</h2>
             {lesson.examples.map((ex) => (
-              <section key={ex.id} className="rounded-2xl border border-border bg-card/50 backdrop-blur p-6 shadow-xl hover:shadow-2xl transition-shadow">
-                <div className="flex items-center justify-between mb-4">
+              <section key={ex.id} className="rounded-2xl border border-border bg-card shadow-sm hover:shadow-md transition-shadow group">
+                <div className="flex items-center justify-between mb-3">
                   <h3 className="font-bold text-foreground">{ex.title}</h3>
-                  <span className="text-xs font-bold bg-accent/50 px-2 py-0.5 rounded text-foreground uppercase tracking-wider">Example</span>
+                  <span className="text-[10px] font-bold bg-black/5 dark:bg-white/5 px-2 py-0.5 rounded text-muted-foreground uppercase tracking-wider">Example</span>
                 </div>
-                <div className="rounded-xl border border-border bg-black/60 overflow-hidden mb-3">
-                  <pre className="p-4 font-mono text-sm text-green-400 overflow-x-auto"><code>{ex.code}</code></pre>
+                <div className="rounded-xl border border-black/10 dark:border-white/5 bg-black/[0.03] dark:bg-[#0d1117] overflow-hidden mb-3">
+                  <pre className="p-4 font-mono text-sm text-green-400 dark:text-green-300 overflow-x-auto whitespace-pre"><code>{ex.code}</code></pre>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(ex.code)
+                    }}
+                    className="absolute right-3 top-3 opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded hover:bg-black/10 dark:hover:bg-white/10 text-xs"
+                    title="Copy code"
+                  >
+                    <Copy className="w-3 h-3" />
+                  </button>
                 </div>
                 {ex.output && (
-                  <div className="flex items-center gap-2 text-xs font-mono mb-3">
+                  <div className="flex items-center gap-2 text-[11px] font-mono mb-2">
                     <span className="text-muted-foreground">Output:</span>
-                    <span className="text-emerald-400">{ex.output}</span>
+                    <span className="text-emerald-500 dark:text-emerald-400">{ex.output}</span>
                   </div>
                 )}
                 <p className="text-sm text-muted-foreground">{ex.explanation}</p>
@@ -151,12 +146,12 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
           </div>
 
           {lesson.aiMlRelevance && (
-            <div className="rounded-2xl border border-indigo-500/30 bg-indigo-500/5 p-6 shadow-lg">
-              <div className="flex items-center gap-2">
+            <div className="rounded-xl border border-indigo-500/30 bg-indigo-500/5 p-5 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
                 <Target className="w-4 h-4 text-indigo-400" />
                 <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider">AI/ML Relevant</span>
               </div>
-              <p className="text-sm text-indigo-100/80 mt-2 leading-relaxed">
+              <p className="text-sm text-indigo-900 dark:text-indigo-100 leading-relaxed">
                 This concept is directly used in AI, Machine Learning, and Data Science workflows.
               </p>
             </div>
@@ -164,7 +159,7 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
         </main>
 
         <aside className="lg:col-span-4 space-y-6">
-          <div className="rounded-2xl border border-border bg-card/50 backdrop-blur p-6 shadow-xl">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
             <h3 className="font-bold mb-3 text-foreground">Next Lesson</h3>
             {nextLesson ? (
               <Link
@@ -178,7 +173,7 @@ export function LessonPlayer({ lesson, modulePath = "/learn/fundamentals", allLe
                 </div>
               </Link>
             ) : (
-              <p className="text-sm text-muted-foreground">You have completed all lessons in this module!</p>
+              <p className="text-sm text-muted-foreground">You've completed all lessons in this module!</p>
             )}
           </div>
 

@@ -5,11 +5,11 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 222.2 47.4% 11.2%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222.2 47.4% 11.2%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222.2 47.4% 11.2%;
     --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
@@ -23,7 +23,7 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
-    --radius: 1rem;
+    --radius: 0.875rem;
   }
 
   .dark {
@@ -54,30 +54,44 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 0, "liga" 0;
-    font-family: "Inter", system-ui, sans-serif;
-  }
-  pre {
-    font-family: "JetBrains Mono", "Fira Code", monospace;
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
   html {
     scroll-behavior: smooth;
   }
+  pre {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+  }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-white/30 backdrop-blur-xl border border-white/20 shadow-lg;
+  .lesson-card {
+    @apply rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition-all duration-200;
   }
-  .glass-card-dark {
-    @apply bg-black/30 backdrop-blur-xl border border-white/10 shadow-xl;
+  .lesson-card:hover {
+    @apply border-primary/30;
   }
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500;
+  .callout {
+    @apply rounded-xl border-l-4 p-4 my-6 text-sm leading-relaxed;
   }
-  .gradient-text-dark {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400;
+  .callout-info {
+    @apply callout border-indigo-500 bg-indigo-500/5 text-indigo-900 dark:text-indigo-100;
+  }
+  .callout-tip {
+    @apply callout border-emerald-500 bg-emerald-500/5 text-emerald-900 dark:text-emerald-100;
+  }
+  .callout-warning {
+    @apply callout border-amber-500 bg-amber-500/5 text-amber-900 dark:text-amber-100;
+  }
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5 transition-all;
+  }
+  .btn-outline {
+    @apply px-6 py-3 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-accent transition-all;
   }
 }
 
@@ -85,42 +99,12 @@
   .text-balance {
     text-wrap: balance;
   }
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
-    z-index: -1;
-    animation: float 20s infinite alternate ease-in-out;
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500;
   }
-  .mesh-gradient {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    opacity: 0.6;
-    background: radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.15), transparent 40%),
-                radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.15), transparent 40%),
-                radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1), transparent 30%);
+  .gradient-text-dark {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500;
   }
-}
-
-@keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(10px, -10px) scale(1); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.5); }
-}
-@keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-.animate-bounce-slow {
-  animation: bounce-slow 3s infinite ease-in-out;
 }
 
 ::-webkit-scrollbar {

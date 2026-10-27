@@ -1,7 +1,10 @@
+"use client"
+
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { useEffect, useState } from "react"
 import "./globals.css"
-import ThemeProvider from "@/components/ThemeProvider"
+import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
@@ -11,10 +14,22 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [dark, setDark] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("python_mastery_theme")
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      const shouldDark = saved ? saved === "dark" : systemDark
+      setDark(shouldDark)
+      document.documentElement.classList.toggle("dark", shouldDark)
+    }
+  }, [])
+
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="bg-background text-foreground antialiased transition-colors duration-500">
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" className={cn(inter.variable, dark && "dark")} suppressHydrationWarning>
+      <body className={cn("bg-background text-foreground antialiased transition-colors duration-500")}>
+        {children}
       </body>
     </html>
   )
